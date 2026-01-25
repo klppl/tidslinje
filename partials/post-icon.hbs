@@ -1,10 +1,10 @@
 {{!-- Component: Dynamic Timeline Icon Selection --}}
 {{!-- Logic:
-1. Priority: Primary Tag Description (if short, i.e., an emoji)
-2. Default: Geometric diamond (◆) for a clean minimalist look
+1. Priority: First Tag Description (Internal or Public)
+2. Default: Geometric diamond (◆)
 --}}
 
-{{#primary_tag}}
+{{#foreach tags visibility="all" limit="1"}}
 {{#if description}}
 {{description}}
 {{else}}
@@ -12,4 +12,4 @@
 {{/if}}
 {{else}}
 ◆
-{{/primary_tag}}
+{{/foreach}}
