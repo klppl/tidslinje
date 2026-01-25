@@ -1,5 +1,8 @@
 # Tidslinje
 
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
+[![Vibe Coded](https://img.shields.io/badge/✨-vibe_coded-blueviolet)](https://github.com/klppl/tidslinje)
+
 **A minimalist, high-performance Ghost theme featuring a timeline-based post layout.**
 
 ![Tidslinje Screenshot](screenshot.png)
@@ -11,7 +14,7 @@ Tidslinje is a focused blogging theme optimized for speed, readability, and a un
 > Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy.
 
 ## 🛠 Project Status: Work in Progress
-**Tidslinje is currently under active development.** While it is "good enough" for production (and we use it ourselves!), expect frequent updates, minor architectural shifts, and the occasional ghost in the machine. Contributions and feedback are welcome as we iterate toward perfection—or at least toward the heat death of the universe.
+**Tidslinje is currently under active development.** While it is "good enough" for production (and I use it myself!), expect frequent updates, minor architectural shifts, and the occasional ghost in the machine. Contributions and feedback are welcome as we iterate toward perfection—or at least toward the heat death of the universe.
 
 ## Key Features
 
