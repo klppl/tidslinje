@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+<head>
+  {{!-- Metadata: Document Settings --}}
+  <meta charset="utf-8" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{!-- Support: Legacy browser compatibility --}}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{!-- Metadata: Page Title --}}
+  <title>{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}</title>
+
+  {{!-- Assets: Core Styles --}}
+  <link rel="stylesheet" type="text/css" href="{{asset " css/main.css"}}" />
+
+  {{!-- Hook: System head assets --}}
+  {{ghost_head}}
+</head>
+
+<body class="{{body_class}} has-{{#match @custom.font " Serif"}}serif{{else match @custom.font "Sans-serif"
+  }}sans{{else}}mono{{/match}}-font" id="body">
+
+  {{!-- View: Template body injection --}}
+  {{{body}}}
+
+  {{!-- View: Footer partial --}}
+  {{> footer}}
+
+  {{!-- Hook: System foot assets --}}
+  {{ghost_foot}}
+
+</body>
+
+</html>

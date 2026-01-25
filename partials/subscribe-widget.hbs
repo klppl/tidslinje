@@ -1,0 +1,42 @@
+{{!-- Component: Subscription & Member Status Widget --}}
+{{#if @site.members_enabled}}
+{{#if @member}}
+<section class="email-optin-widget center-text">
+  <small style="color: grey;">
+    {{t "Thanks for being a"}} <em>{{@site.title}}</em> {{t "subscriber"}},
+    {{#if @member.name}}
+    {{@member.name}}
+    {{else}}
+    {{@member.email}}
+    {{/if}}!
+    <a href="#!" data-members-signout>[{{t "Sign out"}}]</a>
+  </small>
+</section>
+{{!-- View: Logged-out state / Subscription form --}}
+<section class="email-optin-widget center-text">
+  <div style="margin-bottom: 0.5rem;"><small>{{t "Like what you see? Get new posts by email"}}:</small></div>
+
+  {{!-- Input: Data-collection form --}}
+  <form data-members-form="subscribe">
+    <input data-members-email placeholder="{{t " Your email address"}}" type="email" required="true" />
+    <button type="submit"><span>{{t "Subscribe"}}</span></button>
+  </form>
+
+  <small style="color: grey">
+    <small>{{t "or by"}} <a href="{{@site.url}}/rss">RSS</a>, {{t "if you’re that old-school"}}</small>
+  </small>
+
+  {{!-- Feedback: Validation & Success messages --}}
+  <small class="message-success">
+    {{t "Great! Check your inbox and click the link to confirm your subscription."}}
+  </small>
+
+  <small class="message-error">
+    {{t "Please enter a valid email address!"}}
+  </small>
+
+  <small data-members-error></small>
+
+</section>
+{{/if}}
+{{/if}}

@@ -1,0 +1,23 @@
+{{!-- Component: Site-wide structural header --}}
+<header class="main-header" id="main-header">
+
+  {{!-- Layout: Primary Navigation --}}
+  <div class="top-nav">
+    <nav>
+      {{navigation}}
+    </nav>
+  </div>
+
+  <div class="container">
+    {{!-- Layout: Branding & Description --}}
+    <div class="site-branding">
+      <h1 class="site-title">{{@site.title}}</h1>
+      <p class="site-description">{{@site.description}}</p>
+    </div>
+
+    {{!-- Layout: Visual separator --}}
+    <div class="header-separator"></div>
+
+  </div>
+</header>
+<br>

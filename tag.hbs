@@ -1,0 +1,32 @@
+{{!-- View: Main tag collection layout (extends default) --}}
+{{!< default}} {{> content-header}}
+  <section class="tag-info center-text container">
+
+    {{#if tag.feature_image}}
+    <img class="tag-info__image" src="{{tag.feature_image}}" alt="Image for {{tag.name}} tag" />
+    {{/if}}
+
+    <br><br>
+
+    <span class="tag-info__intro">{{t "Posts Tagged"}}:</span>
+    <h1 class="tag-info__name">{{tag.name}}</h1>
+
+    <p class="tag-info__description">
+      {{tag.description}} {{t "Subscribe to this tag’s"}} <a href="{{@site.url}}/tag/{{tag.slug}}/rss/">{{t "RSS
+        feed"}}</a> {{t "to get new"}} {{tag.name}} {{t "posts as they’re written"}}.
+    </p>
+
+    <span class="tag-info__meta">
+      {{plural pagination.total empty=(t "There are no articles with this tag … how did you find it?!") singular=(t "A
+      <strong>% post</strong> collection:") plural=(t "A <strong>% post</strong> collection:")}}
+    </span>
+    </span>
+
+    <br><br>
+    <hr>
+
+  </section>
+
+  <main class="content">
+    {{> "loop"}}
+  </main>

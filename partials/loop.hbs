@@ -1,0 +1,60 @@
+{{!-- Pagination: Previous page link display --}}
+{{#if pagination.prev}}
+<br>
+<div class="center-text">
+  {{t "Page"}} <strong>{{pagination.page}}</strong> {{t "of"}}
+  <strong>{{pagination.pages}}</strong>
+</div>
+<br>
+{{/if}}
+
+{{!-- Loop: Post collection rendering --}}
+<div class="timeline-container">
+  {{#foreach posts visibility="all"}}
+
+  <div class="timeline-item">
+
+    {{!-- LEFT: Date --}}
+    <div class="timeline-left">
+      <time class="timeline-date" datetime="{{date format='YYYY-MM-DD'}}">
+        {{date format="YYYY-MM-DD"}}
+      </time>
+    </div>
+
+    {{!-- CENTER: Marker/Icon --}}
+    <div class="timeline-marker">
+      <div class="timeline-icon">
+        {{!-- Simple logic for icons based on primary tag or random for now --}}
+        {{#has tag="tv-serie"}}📺{{/has}}
+        {{#has tag="recensioner"}}🌲{{/has}}
+        {{#has tag="musik"}}🎵{{/has}}
+        {{#has tag="firefox"}}🦊{{/has}}
+        {{!-- Default dot if no match --}}
+        {{^has tag="tv-serie, recensioner, musik, firefox"}}●{{/has}}
+      </div>
+    </div>
+
+    {{!-- RIGHT: Content --}}
+    <div class="timeline-right">
+      <h2 class="timeline-title">
+        <a href="{{url}}">{{title}}</a>
+        {{#if featured}}<span>★</span>{{/if}}
+      </h2>
+
+      <div class="timeline-excerpt">
+        {{excerpt words="30"}}...
+      </div>
+
+      <a class="timeline-read-more" href="{{url}}">{{t "Read more"}} &rarr;</a>
+    </div>
+
+  </div>
+
+  {{/foreach}}
+</div>
+
+
+{{!-- Pagination: Numeric page links --}}
+<div class="center-text">{{pagination}}</div>
+
+<br>

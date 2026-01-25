@@ -1,0 +1,34 @@
+{{!-- Component: Home-page specific membership opt-in splash --}}
+{{#unless pagination.prev}}
+{{#if @custom.welcome_mat_optin_cta}}
+{{#unless @member}}
+<section class="membership-widget membership-widget--welcome-mat">
+  <div class="container">
+
+    <h1>{{@site.title}}</h1>
+    <h4 class="mt0">{{@site.description}}</h4>
+
+    <br>
+
+    <p class="welcome-mat-optin-cta">{{@custom.welcome_mat_optin_cta}}</p>
+
+    <form data-members-form="subscribe">
+      <input data-members-email placeholder="{{t " Your email address"}}" type="email" required />
+      <button class="btn btn--cta" type="submit"><span>{{t "Subscribe"}}</span></button>
+    </form>
+
+    <div class="message-success">
+      {{t "Great! Check your inbox and click the link to confirm your subscription."}}
+    </div>
+
+    <div class="message-error">
+      {{t "Please enter a valid email address!"}}
+    </div>
+
+    <div data-members-error></div>
+
+  </div>
+</section>
+{{/unless}}
+{{/if}}
+{{/unless}}

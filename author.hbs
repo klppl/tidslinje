@@ -1,0 +1,75 @@
+{{!< default}} {{> content-header}}
+
+  {{#author}}
+  <section class="author-profile container center-text">
+
+    {{#if profile_image}}
+    <img class="author-profile__image" src="{{profile_image}}" alt="{{name}}’s profile image" />
+    {{/if}}
+
+    <h1 class="author-profile__name">{{name}}</h1>
+
+    {{#if bio}}
+    <p class="author-profile__bio">{{bio}}</p>
+    {{else}}
+    <p class="author-profile__bio">
+      {{t "To let their work speak for itself, {authorname} has not written a bio." authorname=name }}
+    </p>
+    {{/if}}
+    <small class="author-profile__meta">
+
+      {{#if location}}
+      <span class="author-info__location inline-block">
+        {{t "Location"}}: <strong>{{location}}</strong>
+      </span>
+      &ensp;
+      {{/if}}
+
+      {{#if website}}
+      <span class="author-info__website inline-block">
+        {{t "Website"}}: <a href="{{website}}"><strong>{{website}}</strong></a>
+      </span>
+      &ensp;
+      {{/if}}
+
+      <span class="author-info__rss  inline-block">
+        <a href="{{url}}rss"><strong>{{t "RSS feed"}}</strong></a> {{t "of posts by"}} {{name}}&ensp;
+      </span>
+      &ensp;
+
+      {{#if twitter}}
+      <span class="author-info__twitter inline-block">
+        {{t "Twitter/X handle"}}: <a href="{{twitter_url}}"><strong>{{twitter}}</strong></a>
+      </span>
+      &ensp;
+      {{/if}}
+
+      {{#if facebook}}
+      <span class="author-info__facebook inline-block">
+        {{t "Facebook page"}}: <a href="{{facebook_url}}"><strong>{{facebook_url}}</strong></a>
+      </span>
+      &ensp;
+      {{/if}}
+
+      <br><br>
+
+      <span class="author-profile__stats inline-block">
+        {{name}}
+        {{plural ../pagination.total empty=(t "hasn’t published any posts yet.") singular=(t "has published <strong>%
+          post</strong>:") plural=(t "has published <strong>% posts</strong>:")}}
+      </span>
+
+      <br><br>
+
+    </small> {{!-- Metadata: Author statistics --}}
+
+  </section>
+  {{/author}}
+
+  {{!-- Content: Main post list --}}
+  <main class="content">
+
+    {{!-- View: Render post loop partial --}}
+    {{> "loop"}}
+
+  </main>

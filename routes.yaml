@@ -1,0 +1,12 @@
+routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template:
+      - index
+    order: featured desc, published_at desc
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

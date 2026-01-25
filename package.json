@@ -1,0 +1,63 @@
+{
+  "name": "tidslinje",
+  "description": "An old-school Ghost theme for the golden era of blogging, customized as Tidslinje",
+  "demo": "https://github.com/klppl",
+  "version": "5.3.0",
+  "engines": {
+    "ghost": ">=5.104.2"
+  },
+  "author": {
+    "name": "Alex",
+    "url": "https://github.com/klppl"
+  },
+  "config": {
+    "posts_per_page": 50,
+    "card_assets": {
+      "exclude": [
+        "bookmark"
+      ]
+    },
+    "custom": {
+      "font": {
+        "type": "select",
+        "options": [
+          "Serif",
+          "Sans-serif",
+          "Monospaced"
+        ],
+        "default": "Monospaced"
+      },
+      "welcome_mat_optin_cta": {
+        "type": "text",
+        "default": "",
+        "description": "Enter a newsletter subscribe pitch to enable the Welcome Mat optin widget on your homepage."
+      }
+    }
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Responsive",
+      "Retro",
+      "Typographic",
+      "Lite",
+      "Brutalist",
+      "Ghost 6",
+      "Paid membership"
+    ]
+  },
+  "keywords": [
+    "responsive",
+    "ghost",
+    "theme",
+    "minimal",
+    "retro",
+    "oldschool",
+    "ghost-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klppl/tidslinje.git"
+  }
+}

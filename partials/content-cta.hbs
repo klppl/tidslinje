@@ -1,0 +1,13 @@
+{{!-- Component: Upgrade CTA aside --}}
+{{{html}}}
+
+<aside style="text-align: center; background: #eee; padding: 0.5em; margin: 1em 0;">
+
+  {{#if @member}}
+  <h2>{{t "This post is for paying subscribers only"}}</h2>
+  {{else}}
+  <h2>{{t "This post is for subscribers only"}}</h2>
+  {{/if}}
+  <a class="button large primary" href="#/portal/signup/">{{t "Subscribe now"}}</a>
+  <p><small>{{t "Already have an account?"}} <a href="#/portal/signin/">{{t "Sign in"}}</a></small></p>
+</aside>

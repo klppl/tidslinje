@@ -1,0 +1,560 @@
+:root {
+  /* SECTION: Global Design Variables */
+  --container-width: 960px;
+  /* Optimized layout width for timeline visualization */
+
+  /* SECTION: Typography Configuration */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "Source Code Pro", "Consolas", monospace;
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+
+  /* SECTION: Color Palette (Dark Mode Base) */
+  --bg-color: #1e1e1e;
+  --card-bg: #252525;
+  --text-color: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --accent-color: #6cb6ff;
+  /* Theme accent color */
+  --border-color: #333;
+  --timeline-line-color: #444;
+}
+
+body {
+  max-width: var(--container-width);
+  padding: 0 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* SECTION: Global Element Styles */
+.post__content,
+.page__content {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.post__header,
+.page__header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post__meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Image rendering logic: grid overflow or container containment */
+.post__content img {
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+pre {
+  overflow: auto;
+  background: #111;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+/* SECTION: Timeline Component Styles */
+/* ================================ */
+
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Timeline vertical axis connector */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 140px;
+  /* Aligned relative to date width */
+  width: 1px;
+  background: var(--timeline-line-color);
+}
+
+.timeline-item {
+  display: flex;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-left {
+  width: 120px;
+  padding-right: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  position: relative;
+  top: 4px;
+  /* Aligned with typography baseline */
+}
+
+.timeline-marker {
+  position: relative;
+  width: 40px;
+  /* Icon container dimensions */
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--bg-color);
+  /* Layered above axis line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.timeline-right {
+  flex: 1;
+  padding-left: 1rem;
+  padding-top: 0;
+}
+
+.timeline-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.timeline-title a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.timeline-title a:hover {
+  color: var(--accent-color);
+}
+
+.timeline-excerpt {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-read-more {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* SECTION: Utility & Theme Overrides */
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 3rem 0;
+}
+
+/* SECTION: Ghost Content Card Styles */
+/* ================================= */
+
+/* figure.kg-width-full { } */
+/* figure.kg-width-wide { } */
+/* .kg-gallery-card { } */
+/* .kg-gallery-container { } */
+/* .kg-gallery-row { } */
+/* .kg-gallery-image { } */
+
+/* SECTION: Bookmark Card Styles */
+/* ==================== */
+
+.kg-bookmark-card {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.kg-bookmark-container {
+  display: flex;
+  text-decoration: none;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  color: var(--text-color);
+  transition: border-color 0.2s;
+}
+
+.kg-bookmark-container:hover {
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+.kg-bookmark-content {
+  padding: 1.25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kg-bookmark-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.kg-bookmark-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.kg-bookmark-metadata {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.kg-bookmark-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.kg-bookmark-publisher {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.kg-bookmark-author {
+  display: inline-block;
+}
+
+.kg-bookmark-author:after {
+  content: "•";
+  margin: 0 0.5rem;
+}
+
+.kg-bookmark-thumbnail {
+  position: relative;
+  min-width: 33%;
+  max-height: 100%;
+}
+
+.kg-bookmark-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* END BOOKMARK CARD STYLES */
+
+/* RESPONSIVE VIDEO EMBED STYLES */
+/* ============================= */
+
+/* This is lightest-weight implementation of responsive video embeds that I have been able to come up with. To cover all edge cases, a JavaScript solution would be needed, but this works in most modern browsers. */
+
+iframe[src*="youtube.com"],
+iframe[src*="youtube-nocookie.com"],
+iframe[src*="vimeo.com"] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+/* END RESPONSIVE EMBED CARD STYLES */
+
+
+/* HEADER STYLES */
+/* ============= */
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.top-nav nav ul li {
+  margin: 0 1rem;
+}
+
+.top-nav a {
+  color: var(--text-color);
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.site-branding {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.site-branding .site-title {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.site-branding .site-description {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.header-separator {
+  border-top: 1px dotted var(--text-muted);
+  opacity: 0.3;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+/* MEMBERSHIP STYLES */
+/* ================= */
+
+/* Most membership stuff is handled by the Ghost portal. These are used for the optin form 
+   at the bottom of each post. Feel free to remove these barebones membership styles if you 
+   don't plan on enabling memberships & subscriptions for your blog. */
+
+.notification-area {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #82ea02;
+  padding: 1rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+.message-success,
+.message-error {
+  display: none;
+  margin-top: 1rem;
+}
+
+.message-error,
+[data-members-error] {
+  color: red;
+}
+
+.message-success {
+  color: green;
+}
+
+.loading button span,
+.error button span,
+.success button span {
+  display: none;
+}
+
+.loading button::after {
+  content: "Loading...";
+}
+
+.error button::after {
+  content: "Error :(";
+}
+
+.success button::after {
+  content: "Success :)";
+}
+
+.success~.message-success,
+.invalid~.message-error,
+.error~.message-error {
+  display: block;
+}
+
+
+/* WELCOME MAT STYLES */
+
+.membership-widget--welcome-mat {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
+  position: absolute;
+  left: 0;
+  background-color: var(--tertiary-color);
+}
+
+.membership-widget--welcome-mat h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.membership-widget--welcome-mat .welcome-mat-optin-cta {
+  line-height: 1.618;
+}
+
+body:has(.membership-widget--welcome-mat) {
+  margin-top: 0 !important;
+}
+
+.membership-widget--welcome-mat+.main-header {
+  padding-top: calc(100vh + 1rem);
+}
+
+/* END MEMBERSHIP STYLES */
+
+@media all and (min-width: 800px) {
+
+  ol,
+  ul {
+    /* Hanging punctuation */
+    padding-inline-start: 0;
+  }
+
+  nav li,
+  nav ul {
+    display: inline;
+  }
+
+  nav li {
+    margin: 0.5rem;
+  }
+
+  .form-group {
+    display: inline;
+  }
+
+  .site-footer__attribution>div {
+    display: inline-block;
+    margin: 0.5rem;
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background: #333;
+    color: #fdfdfd;
+  }
+
+  a {
+    color: lightblue;
+  }
+
+  .kg-bookmark-container {
+    background-color: #444;
+  }
+
+}
+
+@media print {
+  p {
+    text-indent: 0 !important;
+  }
+}

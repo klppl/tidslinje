@@ -1,0 +1,29 @@
+{{!-- Component: Global Site Footer --}}
+<footer class="site-footer center-text">
+
+  {{#if @site.secondary_navigation}}
+  <nav class="site-footer__navigation">
+    {{navigation type="secondary"}}
+  </nav>
+  <br>
+  {{/if}}
+
+  <div class="site-footer__attribution">
+
+    <div class="site-footer__attribution--copyright">
+      <small>
+        &copy; {{date format="YYYY"}}
+        <a href="{{@site.url}}/">{{@site.title}}</a>
+      </small>
+    </div>
+
+    <div class="site-footer__attribution--colophon">
+      <small>
+        {{t "published with"}} <a href="https://ghost.org">ghost</a> + <a href="https://github.com/klppl">❤️</a>
+      </small>
+    </div>
+
+  </div>
+
+</footer>
+<br>

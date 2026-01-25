@@ -1,0 +1,52 @@
+{{!< default}}
+
+{{>content-header}}
+
+<main class="container content" id="content">
+
+  <article class="post {{post_class}}">
+
+    {{#post}}
+
+      <header class="post__header">
+          <h1 class="post__title">{{title}}</h1>
+
+          <div class="post__meta">
+              {{t "Posted by"}} {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}} on
+              <time class="post__date" datetime="{{date format='YYYY-MM-DD'}}">
+                {{date format="MMMM Do, YYYY"}}.
+              </time>
+
+              {{#if tags}}
+                <span class="post__tags">
+                  {{tags prefix=(t "Tagged ")}}
+                </span>
+              {{/if}}
+          </div>
+      </header>
+
+      <section class="post__content">
+        {{content}}
+      </section>
+
+      <br>
+
+      <footer class="post__footer">
+
+      {{> subscribe-widget}}
+
+      <br>
+
+      {{> author-info}}
+
+      <br>
+
+      {{comments}}
+
+      </footer>
+
+
+    {{/post}}
+
+  </article>
+</main>

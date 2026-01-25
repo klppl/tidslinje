@@ -1,0 +1,13 @@
+{{!-- Utility: Post-count-ranked tag collection generator --}}
+{{!-- Usage: Rendered via {{> "tags"}} to list all tags with associated post counts --}}
+{{#get "tags" include="count.posts" order="count.posts desc"}}
+<ul>
+  {{#foreach tags}}
+  {{#if count.posts}}
+  <li>
+    <a href="{{url}}">{{name}} ({{plural count.posts empty='No posts' singular='% post' plural='% posts'}})</a>
+  </li>
+  {{/if}}
+  {{/foreach}}
+  <ul>
+    {{/get}}
