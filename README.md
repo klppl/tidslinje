@@ -6,7 +6,7 @@ Tidslinje is a focused blogging theme optimized for speed, readability, and a un
 
 > [!CAUTION]
 > **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI. 
-> Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy. ◈🌑🏗️
+> Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy.
 
 ## Key Features
 
@@ -65,4 +65,4 @@ Functionality can be extended via these snippets:
 - [Tag Lists](https://gist.github.com/curiositry/02b9c36234d05a06c574691f2c6ff0e0)
 
 ## Maintenance
-Maintained by **[Alex](https://github.com/klppl)**. Open an issue on GitHub for support.
+Maintained by **[klppl](https://github.com/klppl)**. Open an issue on GitHub for support.

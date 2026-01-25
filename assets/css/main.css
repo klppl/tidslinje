@@ -190,6 +190,16 @@ pre {
   z-index: 1;
 }
 
+.timeline-icon-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .timeline-right {
   flex: 1;
   padding-left: 1rem;

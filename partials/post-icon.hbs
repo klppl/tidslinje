@@ -1,15 +1,18 @@
 {{!-- Component: Dynamic Timeline Icon Selection --}}
 {{!-- Logic:
 1. Priority: First Tag Description (Internal or Public)
-2. Default: Geometric diamond (◆)
+2. Action: Wrap icon in a link to the tag's page
+3. Default: Pencil emoji (✍️)
 --}}
 
 {{#foreach tags visibility="all" limit="1"}}
-{{#if description}}
-{{description}}
+<a href="{{url}}" title="{{name}}" class="timeline-icon-link">
+    {{#if description}}
+    {{description}}
+    {{else}}
+    ✍️
+    {{/if}}
+</a>
 {{else}}
-◆
-{{/if}}
-{{else}}
-◆
+✍️
 {{/foreach}}
