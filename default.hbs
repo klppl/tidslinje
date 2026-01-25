@@ -20,7 +20,11 @@
 </head>
 
 <body class="{{body_class}} has-{{#match @custom.font " Serif"}}serif{{else match @custom.font "Sans-serif"
-  }}sans{{else}}mono{{/match}}-font" id="body">
+  }}sans{{else}}mono{{/match}}-font {{#match @custom.body_font_size "Small" }}font-small{{else match
+  @custom.body_font_size "Large" }}font-large{{/match}} {{#match @custom.timeline_density "Compact"
+  }}density-compact{{else match @custom.timeline_density "Spacious" }}density-spacious{{/match}} {{#match
+  @custom.container_width "Narrow" }}width-narrow{{else match @custom.container_width "Wide" }}width-wide{{/match}}
+  {{#match @custom.header_alignment "Left" }}header-left{{/match}}" id="body">
 
   {{!-- View: Template body injection --}}
   {{{body}}}

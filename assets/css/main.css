@@ -39,6 +39,32 @@ body {
   flex-direction: column;
 }
 
+/* SECTION: Typography Utilities */
+.font-small {
+  font-size: 0.9rem;
+}
+
+.font-large {
+  font-size: 1.25rem;
+}
+
+/* SECTION: Layout Utilities */
+.width-narrow {
+  --container-width: 740px;
+}
+
+.width-wide {
+  --container-width: 1200px;
+}
+
+.header-left .site-branding,
+.header-left .top-nav,
+.header-left .post__header,
+.header-left .page__header {
+  text-align: left;
+  justify-content: flex-start;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -151,7 +177,15 @@ pre {
 .timeline-item {
   display: flex;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: var(--timeline-spacing, 3rem);
+}
+
+.density-compact {
+  --timeline-spacing: 1.5rem;
+}
+
+.density-spacious {
+  --timeline-spacing: 5rem;
 }
 
 .timeline-left {
