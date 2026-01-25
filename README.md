@@ -10,6 +10,9 @@ Tidslinje is a focused blogging theme optimized for speed, readability, and a un
 > **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI. 
 > Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy.
 
+## 🛠 Project Status: Work in Progress
+**Tidslinje is currently under active development.** While it is "good enough" for production (and we use it ourselves!), expect frequent updates, minor architectural shifts, and the occasional ghost in the machine. Contributions and feedback are welcome as we iterate toward perfection—or at least toward the heat death of the universe.
+
 ## Key Features
 
 - **Extreme Performance**: Zero external dependencies, zero JavaScript (default), and optimized for Google Core Web Vitals.
