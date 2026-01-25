@@ -4,10 +4,9 @@
 [![Vibe Coded](https://img.shields.io/badge/✨-vibe_coded-blueviolet)](https://github.com/klppl/tidslinje)
 
 **A minimalist, high-performance Ghost theme featuring a timeline-based post layout.**
+Tidslinje is a focused blogging theme optimized for speed, readability, and a unique chronological user experience.
 
 ![Tidslinje Screenshot](screenshot.png)
-
-Tidslinje is a focused blogging theme optimized for speed, readability, and a unique chronological user experience.
 
 > [!CAUTION]
 > **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI. 
