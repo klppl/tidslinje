@@ -2,6 +2,8 @@
 
 **A minimalist, high-performance Ghost theme featuring a timeline-based post layout.**
 
+![Tidslinje Screenshot](screenshot.png)
+
 Tidslinje is a focused blogging theme optimized for speed, readability, and a unique chronological user experience.
 
 > [!CAUTION]
@@ -28,7 +30,7 @@ Compress the theme folder into a `.zip` file and upload it via **Ghost Admin > S
 - **Comments**: Supports native Ghost comments via **Settings > Membership > Commenting**.
 
 ### 3. Customization Options
-- **Dynamic Icons**: To change a post's timeline icon, put an emoji in the **Tag Description** of its primary tag in Ghost Admin. If empty, it defaults to a clean geometric diamond `◆`.
+- **Dynamic Icons**: To change a post's timeline icon, put an emoji in the **Tag Description** of its primary tag in Ghost Admin. If empty, it defaults to `✍️`.
 - **Typography**: Toggle between Serif, Sans-Serif, and Monospaced system fonts in the Design settings.
 - **Welcome Mat**: Enable a full-screen landing page by adding a pitch in the **Welcome mat optin CTA** design field.
 
