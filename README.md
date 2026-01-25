@@ -4,6 +4,10 @@
 
 Tidslinje is a focused blogging theme optimized for speed, readability, and a unique chronological user experience.
 
+> [!CAUTION]
+> **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI. 
+> Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy. ◈🌑🏗️
+
 ## Key Features
 
 - **Extreme Performance**: Zero external dependencies, zero JavaScript (default), and optimized for Google Core Web Vitals.
@@ -24,18 +28,33 @@ Compress the theme folder into a `.zip` file and upload it via **Ghost Admin > S
 - **Comments**: Supports native Ghost comments via **Settings > Membership > Commenting**.
 
 ### 3. Customization Options
+- **Dynamic Icons**: To change a post's timeline icon, put an emoji in the **Tag Description** of its primary tag in Ghost Admin. If empty, it defaults to a clean geometric diamond `◆`.
 - **Typography**: Toggle between Serif, Sans-Serif, and Monospaced system fonts in the Design settings.
-- **Dark Mode**: Automatically respects system preferences. To force dark mode, edit the media queries in `assets/css/main.css`.
-- **Welcome Mat**: Enable a full-screen landing page for new visitors by adding a pitch in the **Welcome mat optin CTA** design field.
+- **Welcome Mat**: Enable a full-screen landing page by adding a pitch in the **Welcome mat optin CTA** design field.
 
-### 4. Technical Overrides
+### 4. Special Post Types
+- **Micro Posts (#micro)**: Tag a post with the internal tag `#micro` to create a title-less status update. These hide the title and "Read more" link, showing the full content with a small `#` permalink at the end. Perfect for quick thoughts or log entries.
+
+### 5. Localization
+- **Swedish Support**: Fully localized for Swedish. The theme automatically detects your Ghost site locale (`Settings > General > Publication Language`). Swedish translations are maintained in `locales/sv.json`.
+
+---
+
+## Technical Maintenance
+
+### Build & Release
+Use the built-in script to package a clean version of the theme (excludes Git, modules, and system noise):
+```bash
+npm run zip
+```
+
+### CSS Overrides
 Override theme variables using **Code Injection**:
 ```html
 <style>
   :root {
-    --container-width: 1000px;
+    --container-width: 960px;
     --accent-color: #6cb6ff;
-    --font-stack: "Inter", sans-serif;
   }
 </style>
 ```

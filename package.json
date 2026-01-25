@@ -1,13 +1,17 @@
 {
   "name": "tidslinje",
-  "description": "An old-school Ghost theme for the golden era of blogging, customized as Tidslinje",
+  "description": "Tidslinje: A minimalist, timeline-focused Ghost theme for chronicling your existence before the inevitable heat death of the universe.",
   "demo": "https://github.com/klppl",
-  "version": "5.3.0",
+  "version": "1.2.2",
   "engines": {
     "ghost": ">=5.104.2"
   },
+  "scripts": {
+    "zip": "zip -r tidslinje.zip . -x '*.git*' -x 'node_modules/*' -x '.DS_Store' -x '.antigravity/*' -x '*.zip'"
+  },
   "author": {
-    "name": "Alex",
+    "name": "alexander",
+    "email": "hej@klippel.se",
     "url": "https://github.com/klppl"
   },
   "config": {
@@ -38,22 +42,18 @@
     "type": "theme",
     "categories": [
       "Minimal",
-      "Responsive",
+      "Personal",
       "Retro",
-      "Typographic",
-      "Lite",
-      "Brutalist",
-      "Ghost 6",
-      "Paid membership"
+      "Dark mode",
+      "Ghost 6"
     ]
   },
   "keywords": [
-    "responsive",
-    "ghost",
-    "theme",
-    "minimal",
-    "retro",
-    "oldschool",
+    "tidslinje",
+    "timeline",
+    "minimalist",
+    "nihilism",
+    "performance",
     "ghost-theme"
   ],
   "repository": {

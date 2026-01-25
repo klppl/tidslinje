@@ -24,18 +24,18 @@
     {{!-- CENTER: Marker/Icon --}}
     <div class="timeline-marker">
       <div class="timeline-icon">
-        {{!-- Simple logic for icons based on primary tag or random for now --}}
-        {{#has tag="tv-serie"}}📺{{/has}}
-        {{#has tag="recensioner"}}🌲{{/has}}
-        {{#has tag="musik"}}🎵{{/has}}
-        {{#has tag="firefox"}}🦊{{/has}}
-        {{!-- Default dot if no match --}}
-        {{^has tag="tv-serie, recensioner, musik, firefox"}}●{{/has}}
+        {{> "post-icon"}}
       </div>
     </div>
 
     {{!-- RIGHT: Content --}}
     <div class="timeline-right">
+      {{#has tag="#micro"}}
+      <div class="timeline-content timeline-content--micro">
+        {{{content}}}
+        <a href="{{url}}" class="timeline-permalink" aria-label="Permalink">#</a>
+      </div>
+      {{else}}
       <h2 class="timeline-title">
         <a href="{{url}}">{{title}}</a>
         {{#if featured}}<span>★</span>{{/if}}
@@ -46,6 +46,7 @@
       </div>
 
       <a class="timeline-read-more" href="{{url}}">{{t "Read more"}} &rarr;</a>
+      {{/has}}
     </div>
 
   </div>
