@@ -5,10 +5,14 @@
 3. Default: Pencil emoji (✍️)
 --}}
 
-{{#foreach tags visibility="all" limit="1"}}
+{{#foreach tags visibility="internal" limit="1"}}
 <a href="{{url}}" title="{{name}}" class="timeline-icon-link">
     {{#if description}}
     {{description}}
+    {{else}}
+    ✍️
     {{/if}}
 </a>
+{{else}}
+<span class="timeline-icon-link" title="Default Icon">✍️</span>
 {{/foreach}}

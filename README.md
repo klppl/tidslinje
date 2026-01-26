@@ -36,7 +36,7 @@ Compress the theme folder into a `.zip` file and upload it via **Ghost Admin > S
 - **Comments**: Supports native Ghost comments via **Settings > Membership > Commenting**.
 
 ### 3. Customization Options
-- **Dynamic Icons**: To change a post's timeline icon, put an emoji in the **Tag Description** of its primary tag in Ghost Admin. If empty, it defaults to `✍️`.
+- **Dynamic Icons**: To change a post's timeline icon, put an emoji in the **Description** of an **Internal Tag** (starts with `#`). If multiple internal tags exist, the first one is used. If empty, it defaults to `✍️`.
 - **Typography**: Toggle between Serif, Sans-Serif, and Monospaced system fonts in the Design settings.
 - **Welcome Mat**: Enable a full-screen landing page by adding a pitch in the **Welcome mat optin CTA** design field.
 
@@ -83,6 +83,6 @@ Functionality can be extended via these snippets:
 - [ ] **Timeline Entry Animations**: Add subtle fade-in effects for timeline items as they enter the viewport.
 - [ ] **Scroll Progress**: Implement a discrete reading progress bar at the top of the page.
 - [ ] **Typography Audit**: Optimize line-heights and letter-spacing for the "Monospaced" vibe to ensure maximum readability.
-- [ ] **Bugfix**: Investigate and fix why `feature_image` is not rendering on post pages.
-- [ ] **Visibility Toggles**: Add custom settings to show/hide metadata (Author, Tags, Date) in both the post header and footer.
+- [x] **Bugfix**: Investigate and fix why `feature_image` is not rendering on post pages.
+- [x] **Visibility Toggles**: Add custom settings to show/hide metadata (Author, Tags, Date) in both the post header and footer.
 - [ ] **Related Content**: Implement a "Related Posts" section in the footer with a toggle to show/hide it.
