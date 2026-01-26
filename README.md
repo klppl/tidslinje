@@ -67,17 +67,12 @@ Override theme variables using **Code Injection**:
 </style>
 ```
 
-## Extensions
-Functionality can be extended via these snippets:
-- [Navigation Hamburger](https://gist.github.com/curiositry/02332a1b6d5da73ea85c14d623e6b29f)
-- [Tag Lists](https://gist.github.com/curiositry/02b9c36234d05a06c574691f2c6ff0e0)
-
 ## Roadmap / TODO
 
 - [x] Add a toggle to allow the timeline icon to appear on the left or in its current position.
 - [x] Ensure the icon spot can be left blank (no placeholder).
-- [ ] Implement a top-row icon filter bar for quick navigation/filtering.
-- [ ] **Header Overhaul**: Integrate `@site.icon` as a profile picture with a toggle for circular/square framing.
+
+- [x] **Header Overhaul**: Integrate `@site.icon` as a profile picture with a toggle for circular/square framing.
 - [ ] **Navigation Refinement**: Redesign the menu into a sleek bar with better spacing and hover micro-animations.
 - [ ] **Sticky Navigation**: Add a setting to keep the header/menu pinned to the top during scroll.
 - [ ] **Timeline Entry Animations**: Add subtle fade-in effects for timeline items as they enter the viewport.

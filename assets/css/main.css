@@ -555,6 +555,37 @@ iframe[src*="vimeo.com"] {
   font-size: 0.9rem;
 }
 
+.site-icon-wrapper {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+}
+
+.site-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.site-icon-wrapper.is-round {
+  border-radius: 50%;
+}
+
+.site-icon-wrapper.is-squircle {
+  border-radius: 22%;
+}
+
+.site-icon-wrapper.is-rounded {
+  border-radius: 12px;
+}
+
+.site-icon-wrapper.is-sharp {
+  border-radius: 0;
+}
+
 .header-separator {
   border-top: 1px dotted var(--text-muted);
   opacity: 0.3;

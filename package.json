@@ -2,7 +2,7 @@
   "name": "tidslinje",
   "description": "Tidslinje: A minimalist, timeline-focused Ghost theme for chronicling your existence before the inevitable heat death of the universe.",
   "demo": "https://github.com/klppl",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "engines": {
     "ghost": ">=5.104.2"
   },
@@ -75,6 +75,16 @@
           "Left"
         ],
         "default": "Center"
+      },
+      "icon_framing": {
+        "type": "select",
+        "options": [
+          "Round",
+          "Squircle",
+          "Rounded",
+          "Sharp"
+        ],
+        "default": "Round"
       },
       "welcome_mat_optin_cta": {
         "type": "text",
