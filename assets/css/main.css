@@ -526,22 +526,230 @@ iframe[src*="vimeo.com"] {
 .top-nav {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
+.top-nav nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .top-nav nav ul li {
-  margin: 0 1rem;
+  margin: 0;
 }
 
 .top-nav a {
   color: var(--text-color);
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.top-nav a:hover {
-  text-decoration: underline;
+/* STYLE: Pill (Default) */
+.nav-style-pill a {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+.nav-style-pill a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
   color: #fff;
+}
+
+.nav-style-pill .nav-current a {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* STYLE: Underline */
+.nav-style-underline a {
+  padding: 0.5rem 0.75rem;
+  opacity: 0.75;
+}
+
+.nav-style-underline a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.nav-style-underline a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.nav-style-underline a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-style-underline .nav-current a {
+  color: #fff;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.nav-style-underline .nav-current a::after {
+  transform: scaleX(1);
+  background-color: #fff;
+  transform-origin: bottom center;
+}
+
+/* STYLE: Minimal */
+.nav-style-minimal a {
+  padding: 0.5rem 1rem;
+  opacity: 0.7;
+}
+
+.nav-style-minimal a:hover {
+  opacity: 1;
+  color: #fff;
+  transform: translateY(-1px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-style-minimal .nav-current a {
+  opacity: 1;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+/* STYLE: Brackets */
+.nav-style-brackets a {
+  padding: 0.5rem 0.5rem;
+  /* Tighter padding */
+}
+
+.nav-style-brackets a::before,
+.nav-style-brackets a::after {
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.nav-style-brackets a::before {
+  content: '[';
+  transform: translateX(10px);
+  margin-right: 4px;
+}
+
+.nav-style-brackets a::after {
+  content: ']';
+  transform: translateX(-10px);
+  margin-left: 4px;
+}
+
+.nav-style-brackets a:hover::before,
+.nav-style-brackets a:hover::after,
+.nav-style-brackets .nav-current a::before,
+.nav-style-brackets .nav-current a::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-style-brackets a:hover,
+.nav-style-brackets .nav-current a {
+  color: #fff;
+}
+
+/* STYLE: Block (Brutalist) */
+.nav-style-block a {
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+.nav-style-block a:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+.nav-style-block .nav-current a {
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+}
+
+/* STYLE: Cursor (Terminal) */
+.nav-style-cursor a {
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  /* Room for cursor */
+}
+
+.nav-style-cursor a::before {
+  content: '>';
+  position: absolute;
+  left: 0.5rem;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.2s ease;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.nav-style-cursor a:hover::before,
+.nav-style-cursor .nav-current a::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-style-cursor a:hover {
+  color: #fff;
+}
+
+.nav-style-cursor .nav-current a {
+  font-weight: 600;
+}
+
+/* MODIFIER: Navigation Size */
+/* MODIFIER: Navigation Size */
+.nav-size-0-75rem {
+  font-size: 0.75rem;
+}
+
+.nav-size-0-875rem {
+  font-size: 0.875rem;
+}
+
+.nav-size-1rem {
+  font-size: 1rem;
+}
+
+.nav-size-1-25rem {
+  font-size: 1.25rem;
+}
+
+.nav-size-1-5rem {
+  font-size: 1.5rem;
+}
+
+.nav-size-1-75rem {
+  font-size: 1.75rem;
 }
 
 .site-branding {

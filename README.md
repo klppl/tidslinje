@@ -69,11 +69,10 @@ Override theme variables using **Code Injection**:
 
 ## Roadmap / TODO
 
-- [x] Add a toggle to allow the timeline icon to appear on the left or in its current position.
-- [x] Ensure the icon spot can be left blank (no placeholder).
-
+- [x] **Add a toggle to allow the timeline icon** to appear on the left or in its current position**.
+- [x] **Ensure the icon spot can be left blank** (no placeholder).
 - [x] **Header Overhaul**: Integrate `@site.icon` as a profile picture with a toggle for circular/square framing.
-- [ ] **Navigation Refinement**: Redesign the menu into a sleek bar with better spacing and hover micro-animations.
+- [x] **Navigation Refinement**: Redesign the menu into a sleek bar with better spacing and hover micro-animations.
 - [ ] **Sticky Navigation**: Add a setting to keep the header/menu pinned to the top during scroll.
 - [ ] **Timeline Entry Animations**: Add subtle fade-in effects for timeline items as they enter the viewport.
 - [ ] **Scroll Progress**: Implement a discrete reading progress bar at the top of the page.
@@ -81,3 +80,4 @@ Override theme variables using **Code Injection**:
 - [x] **Bugfix**: Investigate and fix why `feature_image` is not rendering on post pages.
 - [x] **Visibility Toggles**: Add custom settings to show/hide metadata (Author, Tags, Date) in both the post header and footer.
 - [x] **Related Content**: Implement a "Related Posts" section in the footer with a toggle to show/hide it.
+- [ ] **Theme Expansion**: Add "Nordic Forest" palette (Deep greens & muted creams),"Warm Earth" palette (Terracotta & Sand), "Cyberpunk" palette (Neon accents on dark grey), "Dracula" palette (Classic violet/dark theme). Inspiration from https://coolors.co/palettes/trending
