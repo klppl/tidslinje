@@ -234,6 +234,51 @@ pre {
   height: 100%;
 }
 
+/* MODIFIER: Icon Position - Left */
+/* Logic: Icon moved to far left. Date moved to center. */
+
+
+.icon-position-left .timeline-marker {
+  order: -1;
+  margin-right: 20px;
+}
+
+.icon-position-left .timeline-left {
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 0;
+  width: 100px;
+  /* Adjust as needed */
+  /* Timeline line stays with date or moves? 
+     Let's keep line relative to the "axis" which is usually the date column in this theme.
+     But if icon is far left, maybe the axis should be there?
+     For now, let's just reorder.
+  */
+}
+
+.icon-position-left .timeline-container::before {
+  /* If we want the line to move to the icon, we change left position.
+     Default left is 140px. 
+     If Icon (40px) + Margin (20px) is first.. 
+  */
+  left: 20px;
+  /* Center of the icon (40/2) */
+}
+
+/* MODIFIER: Icon Position - Right */
+/* Logic: Icon moved to far right. */
+
+
+.icon-position-right .timeline-marker {
+  order: 10;
+  margin-left: 20px;
+}
+
+/* MODIFIER: Icon Position - None */
+.icon-position-none .timeline-marker {
+  display: none;
+}
+
 .timeline-right {
   flex: 1;
   padding-left: 1rem;
