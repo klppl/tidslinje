@@ -8,14 +8,10 @@
   {{!-- Render: Optional author profile image --}}
 
   {{#if bio}}
-
   <p class="author-info__bio mb0">{{bio}}
-    <!-- this p tag is closed after the location and website info -->
     {{else}}
-  <p>{{t "Read"}} <a href="{{url}}">{{t "more posts"}}</a> {{t "by this author"}}.
-    <!-- this p tag is closed after the location and website info -->
+  <p>
     {{/if}}
-    <br><br>
     <span class="author-info__meta">
       {{#if location}}
       <span class="author-info__location ">

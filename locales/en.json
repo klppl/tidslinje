@@ -25,7 +25,6 @@
   "Great! Check your inbox and click the link to confirm your subscription.": "Great! Check your inbox and click the link to confirm your subscription.",
   "Please enter a valid email address!": "Please enter a valid email address!",
   "Written by": "Written by",
-  "by this author": "by this author",
   "handle": "handle",
   "theme by": "theme by",
   "published with": "published with",
@@ -41,5 +40,7 @@
   "Newer posts": "Newer posts",
   "Sign up": "Sign up",
   "Home": "Home",
-  "About": "About"
+  "About": "About",
+  "Read more posts": "Read more posts",
+  "Check more related posts": "Check more related posts"
 }

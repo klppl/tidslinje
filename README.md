@@ -85,4 +85,4 @@ Functionality can be extended via these snippets:
 - [ ] **Typography Audit**: Optimize line-heights and letter-spacing for the "Monospaced" vibe to ensure maximum readability.
 - [x] **Bugfix**: Investigate and fix why `feature_image` is not rendering on post pages.
 - [x] **Visibility Toggles**: Add custom settings to show/hide metadata (Author, Tags, Date) in both the post header and footer.
-- [ ] **Related Content**: Implement a "Related Posts" section in the footer with a toggle to show/hide it.
+- [x] **Related Content**: Implement a "Related Posts" section in the footer with a toggle to show/hide it.

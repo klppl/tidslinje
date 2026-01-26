@@ -47,21 +47,19 @@
         {{content}}
       </section>
 
-      <br>
-
       <footer class="post__footer">
 
         {{> subscribe-widget}}
 
-        <br>
-
         {{#match @custom.post_footer_show_author}}
         {{> author-info}}
-
-        <br>
         {{/match}}
 
         {{comments}}
+
+        {{#match @custom.post_footer_show_related}}
+        {{> related-posts reltags=post.tags exclude=post.id}}
+        {{/match}}
 
       </footer>
 

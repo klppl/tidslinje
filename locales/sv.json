@@ -25,7 +25,6 @@
     "Great! Check your inbox and click the link to confirm your subscription.": "Grymt! Kolla din inkorg och klicka på länken för att bekräfta din prenumeration.",
     "Please enter a valid email address!": "Vänligen ange en giltig e-postadress!",
     "Written by": "Skriven av",
-    "by this author": "av denna författare",
     "handle": "konto",
     "theme by": "tema av",
     "published with": "publicerad med",
@@ -42,5 +41,7 @@
     "Newer posts": "Nyare inlägg",
     "Sign up": "Prenumerera",
     "Home": "Start",
-    "About": "Om"
+    "About": "Om",
+    "Read more posts": "Läs fler inlägg",
+    "Check more related posts": "Relaterade inlägg"
 }

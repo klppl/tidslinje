@@ -1,0 +1,37 @@
+{{!-- Related Posts Container - Populated by JavaScript --}}
+<div id="related-posts-container"
+    data-show-excerpt="{{#match @custom.related_posts_show_excerpt}}true{{else}}false{{/match}}"></div>
+
+{{!-- Related Posts Script --}}
+<script>
+    (function () {
+        // Configuration
+        const API_URL = '{{@site.url}}';
+        const API_KEY = '8106af3afb7842a530c500e633';
+        const HEADING_TEXT = '{{t "Check more related posts"}}';
+
+        // Get settings from data attributes
+        const container = document.getElementById('related-posts-container');
+        const SHOW_EXCERPT = container.getAttribute('data-show-excerpt') === 'true';
+
+        // Post data
+        const postId = '{{id}}';
+        const tags = [
+            '{{tags.[0].slug}}',
+            '{{tags.[1].slug}}',
+            '{{tags.[2].slug}}',
+            '{{tags.[3].slug}}',
+            '{{tags.[4].slug}}',
+            '{{tags.[5].slug}}',
+            '{{tags.[6].slug}}'
+        ].filter(tag => tag && tag.trim() !== '');
+
+        // Load the related posts script
+        const script = document.createElement('script');
+        script.src = '{{asset "js/related-posts.js"}}';
+        script.onload = function () {
+            loadRelatedPosts(postId, tags, API_URL, API_KEY, HEADING_TEXT, SHOW_EXCERPT);
+        };
+        document.body.appendChild(script);
+    })();
+</script>
