@@ -204,6 +204,14 @@ pre {
   /* Aligned with typography baseline */
 }
 
+.timeline-date-mobile {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
 .timeline-marker {
   position: relative;
   width: 40px;
@@ -813,4 +821,32 @@ body:has(.membership-widget--welcome-mat) {
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-top: auto;
+}
+
+/* SECTION: Mobile Responsiveness */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-left {
+    display: none;
+  }
+
+  .timeline-date-mobile {
+    display: block;
+  }
+
+  .timeline-excerpt {
+    display: none;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-marker {
+    margin-right: 1rem;
+  }
 }

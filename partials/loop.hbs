@@ -30,6 +30,9 @@
 
     {{!-- RIGHT: Content --}}
     <div class="timeline-right">
+      <time class="timeline-date-mobile" datetime="{{date format='YYYY-MM-DD'}}">
+        {{date format="YYYY-MM-DD"}}
+      </time>
       {{#has tag="#micro"}}
       <div class="timeline-content timeline-content--micro">
         {{{content}}}
