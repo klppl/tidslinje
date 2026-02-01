@@ -52,16 +52,51 @@ body {
 .has-serif-font {
   --font-body: var(--font-serif);
   --font-heading: var(--font-serif);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.has-serif-font h1,
+.has-serif-font h2,
+.has-serif-font h3,
+.has-serif-font h4,
+.has-serif-font h5,
+.has-serif-font h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .has-sans-font {
   --font-body: var(--font-sans);
   --font-heading: var(--font-sans);
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.has-sans-font h1,
+.has-sans-font h2,
+.has-sans-font h3,
+.has-sans-font h4,
+.has-sans-font h5,
+.has-sans-font h6 {
+  letter-spacing: -0.01em;
 }
 
 .has-mono-font {
   --font-body: var(--font-mono);
   --font-heading: var(--font-mono);
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+}
+
+.has-mono-font h1,
+.has-mono-font h2,
+.has-mono-font h3,
+.has-mono-font h4,
+.has-mono-font h5,
+.has-mono-font h6 {
+  letter-spacing: 0.03em;
+  line-height: 1.3;
 }
 
 /* SECTION: Layout Utilities */

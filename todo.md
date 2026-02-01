@@ -28,6 +28,8 @@
 
 - [x] **`icon-position-right` doesn't adjust timeline line** — `main.css:280-283`. The `icon-position-left` variant repositions the `::before` line to `left: 20px`, but `icon-position-right` leaves the line at the default 140px even though the icon has moved.
 
+- [x] **Typography Audit** — Optimize line-heights and letter-spacing for all font options (serif, sans-serif, monospace) to ensure maximum readability.
+
 ## Nice to Have
 
 - [x] **Add `error.hbs` / `404.hbs` templates** — Without these, Ghost falls back to a plain default error page that doesn't match the theme.
@@ -45,3 +47,13 @@
 - [x] **Mobile `icon-position-left` alignment** — The mobile breakpoint forces the timeline line to `left: 20px`, which coincidentally matches the `icon-position-left` desktop value, but the interaction between the two hasn't been fully accounted for when `.timeline-left` is hidden and the marker is reordered.
 
 - [x] **Document bookmark card CSS dependency** — `package.json` excludes Ghost's bookmark card assets and the theme provides custom CSS. If Ghost changes bookmark markup, the custom styles may break. A comment noting this would help future maintenance.
+
+- [ ] **Sticky Navigation** — Add a setting to keep the header/menu pinned to the top during scroll.
+
+- [ ] **Scroll Progress** — Implement a discrete reading progress bar at the top of the page.
+
+## Someday
+
+- [ ] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
+
+- [ ] **Theme Expansion** — Add color palettes: "Nordic Forest" (deep greens & muted creams), "Warm Earth" (terracotta & sand), "Cyberpunk" (neon accents on dark grey), "Dracula" (classic violet/dark theme). Inspiration from https://coolors.co/palettes/trending
