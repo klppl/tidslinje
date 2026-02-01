@@ -14,6 +14,8 @@
 
 ## Bugs
 
+- [x] **Related posts broken** — API key was empty. The JS regex that parsed `script.textContent` for `key: 'abc...'` broke because Cloudflare Rocket Loader rewrites script tags. Fixed by using Ghost's `{{content_api_key}}` Handlebars helper instead. Requires Ghost 5.x+ (which the theme already does).
+
 - [x] **XSS risk in `related-posts.js`** — `assets/js/related-posts.js:86-103`. Post titles and excerpts are injected via template literals into `innerHTML` without escaping. Sanitize or use `textContent`.
 
 - [x] **Missing parameters in fallback `getRecentPosts` call** — `assets/js/related-posts.js:24`. When tags fetch returns empty, `headingText` and `showExcerpt` are not passed, rendering `undefined` as the heading text.
