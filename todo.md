@@ -56,7 +56,7 @@
 
 ## Someday
 
-- [ ] **Tag Icon Filter Bar** — Add a horizontal row of tag icons between the header and the timeline. Each icon links to its tag page, letting users filter posts by category (e.g. click the muscle emoji to see only fitness posts). Reuse the existing internal tag emoji system (`#tag` description field). Needs: fetch visible internal tags, render their emojis as a clickable row, style it to match the nav, possibly make it toggleable via a theme setting.
+- [ ] **Tag Icon Filter Bar** — Blocked: Ghost's `{{#get "tags"}}` helper cannot fetch internal tags (visibility filter is ignored). Would need a JavaScript/Content API approach similar to related-posts, or a future Ghost update that supports `visibility:internal` in the get helper.
 
 - [ ] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
 
