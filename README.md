@@ -3,74 +3,93 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
 [![Vibe Coded](https://img.shields.io/badge/✨-vibe_coded-blueviolet)](https://github.com/klppl/tidslinje)
 
-**A minimalist, high-performance Ghost theme featuring a timeline-based post layout.**
-
-Tidslinje is a focused blogging theme optimized for speed, readability, and a unique chronological user experience.
+A dark, minimal Ghost theme built around a timeline layout. No JavaScript, no external dependencies, no tracking.
 
 ![Tidslinje Screenshot](screenshot.png)
 
 > [!CAUTION]
-> **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI. 
+> **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI.
 > Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy.
 
-## 🛠 Project Status: Work in Progress
-**Tidslinje is currently under active development.** While it is "good enough" for production (and I use it myself!), expect frequent updates, minor architectural shifts, and the occasional ghost in the machine. Contributions and feedback are welcome as we iterate toward perfection—or at least toward the heat death of the universe.
+## Features
 
-## Key Features
+- Timeline-based post listing with configurable density and icon positions
+- Color palettes (Default dark, Dracula)
+- Six navigation styles (Pill, Underline, Minimal, Brackets, Block, Cursor)
+- Three font families (Serif, Sans-serif, Monospaced) with adjustable size
+- Micro posts for short-form content
+- Zero JS by default, no third-party requests
+- Swedish localization
 
-- **Extreme Performance**: Zero external dependencies, zero JavaScript (default), and optimized for Google Core Web Vitals.
-- **Timeline View**: A chronological axis-based post list that emphasizes your content over time.
-- **Minimalist Design**: A clean, "rustic" aesthetic that stays out of the way of your words.
-- **Privacy First**: No tracking, no analytics, no third-party bloat.
+## Setup
 
----
+### Installation
 
-## Setup & Customization
+Package and upload:
 
-### 1. Installation
-Compress the theme folder into a `.zip` file and upload it via **Ghost Admin > Settings > Design > Change theme**.
-
-### 2. Primary Configuration
-- **Featured Posts**: To keep featured posts pinned to the top, upload the provided `routes.yaml` in **Settings > Labs**.
-- **Search**: Enable the portal search by adding a primary navigation item with the label `Search` and URL `#/search`.
-- **Comments**: Supports native Ghost comments via **Settings > Membership > Commenting**.
-
-### 3. Customization Options
-- **Dynamic Icons**: To change a post's timeline icon, put an emoji in the **Description** of an **Internal Tag** (starts with `#`). If multiple internal tags exist, the first one is used. If empty, it defaults to `✍️`.
-- **Typography**: Toggle between Serif, Sans-Serif, and Monospaced system fonts in the Design settings.
-- **Welcome Mat**: Enable a full-screen landing page by adding a pitch in the **Welcome mat optin CTA** design field.
-
-### 4. Special Post Types
-- **Micro Posts (#micro)**: Tag a post with the internal tag `#micro` to create a title-less status update. These hide the title and "Read more" link, showing the full content with a small `#` permalink at the end. Perfect for quick thoughts or log entries.
-
-### 5. Localization
-- **Swedish Support**: Fully localized for Swedish. The theme automatically detects your Ghost site locale (`Settings > General > Publication Language`). Swedish translations are maintained in `locales/sv.json`.
-
----
-
-## Technical Maintenance
-
-### Build & Release
-
-1. Bump the version in `package.json`
-2. Package the theme:
 ```bash
 npm run zip
 ```
-3. Upload `tidslinje.zip` via **Ghost Admin > Settings > Design > Change theme**
 
-If you need to package manually (no npm):
-```bash
-zip -r tidslinje.zip . -x "*.git*" -x "node_modules/*" -x ".DS_Store" -x ".antigravity/*" -x "*.zip"
-```
+Upload `tidslinje.zip` via **Ghost Admin > Settings > Design > Change theme**.
 
-### CSS Overrides
-Override theme variables using **Code Injection**:
+### Configuration
+
+- **Featured posts**: Upload the included `routes.yaml` in **Settings > Labs** to pin featured posts.
+- **Search**: Add a nav item with label `Search` and URL `#/search`.
+- **Comments**: Enable via **Settings > Membership > Commenting**.
+
+### Theme Settings
+
+All of these are in **Ghost Admin > Design**:
+
+| Setting | Options |
+|---|---|
+| Color palette | Default, Dracula |
+| Font | Serif, Sans-serif, Monospaced |
+| Body font size | Small, Default, Large |
+| Container width | Narrow, Normal, Wide |
+| Header alignment | Center, Left |
+| Icon framing | Round, Squircle, Rounded, Sharp |
+| Navigation style | Pill, Underline, Minimal, Brackets, Block, Cursor |
+| Navigation size | 0.75rem – 1.75rem |
+| Timeline density | Compact, Comfortable, Spacious |
+| Timeline icon position | Standard, Left, Right, None |
+
+Post display toggles (author, date, tags, related posts, excerpts) and a Welcome Mat opt-in CTA are also available.
+
+### Timeline Icons
+
+Put an emoji in the **Description** field of an **Internal Tag** (the ones starting with `#`). The first internal tag with a description is used as that post's timeline icon. Falls back to `✍️`.
+
+### Micro Posts
+
+Tag a post with `#micro` to turn it into a short-form entry — no title, no "Read more" link, just the content inline on the timeline with a small `#` permalink.
+
+### Localization
+
+Set your Ghost publication language (`Settings > General > Publication Language`). Swedish translations are in `locales/sv.json`.
+
+## CSS Overrides
+
+Override any theme variable via **Code Injection**:
+
 ```html
 <style>
   :root {
-    --container-width: 960px;
+    --bg-color: #1e1e1e;
+    --card-bg: #252525;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
     --accent-color: #6cb6ff;
+    --heading-color: #fff;
+    --border-color: #333;
+    --timeline-line-color: #444;
+    --code-bg: #111;
   }
 </style>
 ```
+
+## License
+
+[GPL-3.0](LICENSE)
