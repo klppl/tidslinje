@@ -2,7 +2,7 @@
   "name": "tidslinje",
   "description": "Tidslinje: A minimalist, timeline-focused Ghost theme for chronicling your existence before the inevitable heat death of the universe.",
   "demo": "https://github.com/klppl",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "engines": {
     "ghost": ">=5.104.2"
   },
@@ -24,7 +24,14 @@
     "custom": {
       "color_palette": {
         "type": "select",
-        "options": ["Default", "Dracula"],
+        "options": [
+          "Default",
+          "Dracula",
+          "Catppuccin",
+          "Nordic Forest",
+          "Warm Earth",
+          "Cyberpunk"
+        ],
         "default": "Default"
       },
       "font": {
@@ -95,6 +102,10 @@
           "1.75rem"
         ],
         "default": "1rem"
+      },
+      "sticky_navigation": {
+        "type": "boolean",
+        "default": true
       },
       "timeline_density": {
         "type": "select",

@@ -50,12 +50,14 @@
 
 - [x] **Document bookmark card CSS dependency** — `package.json` excludes Ghost's bookmark card assets and the theme provides custom CSS. If Ghost changes bookmark markup, the custom styles may break. A comment noting this would help future maintenance.
 
-- [ ] **Sticky Navigation** — Add a setting to keep the header/menu pinned to the top during scroll.
+- [x] **Sticky Navigation** — Nav sticks to top on scroll with `position: sticky`, using `--bg-color` background so content scrolls behind it.
 
 - [ ] **Scroll Progress** — Implement a discrete reading progress bar at the top of the page.
 
 ## Someday
 
+- [ ] **Tag Icon Filter Bar** — Add a horizontal row of tag icons between the header and the timeline. Each icon links to its tag page, letting users filter posts by category (e.g. click the muscle emoji to see only fitness posts). Reuse the existing internal tag emoji system (`#tag` description field). Needs: fetch visible internal tags, render their emojis as a clickable row, style it to match the nav, possibly make it toggleable via a theme setting.
+
 - [ ] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
 
-- [ ] **Theme Expansion** — ~~Dracula~~ done (Default + Dracula shipped). Remaining palettes: "Nordic Forest" (deep greens & muted creams), "Warm Earth" (terracotta & sand), "Cyberpunk" (neon accents on dark grey). Inspiration from https://coolors.co/palettes/trending
+- [x] **Theme Expansion** — Shipped: Default, Dracula, Catppuccin (Mocha), Nordic Forest, Warm Earth, Cyberpunk.

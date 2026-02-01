@@ -1,21 +1,20 @@
+{{!-- Layout: Primary Navigation (outside header for sticky positioning) --}}
+<div class="top-nav {{#match @custom.navigation_style " Underline"}}nav-style-underline{{/match}}{{#match
+  @custom.navigation_style "Minimal" }}nav-style-minimal{{/match}}{{#match @custom.navigation_style "Pill"
+  }}nav-style-pill{{/match}}{{#match @custom.navigation_style "Brackets" }}nav-style-brackets{{/match}}{{#match
+  @custom.navigation_style "Block" }}nav-style-block{{/match}}{{#match @custom.navigation_style "Cursor"
+  }}nav-style-cursor{{/match}} {{#match @custom.navigation_size "0.75rem" }}nav-size-0-75rem{{/match}}{{#match
+  @custom.navigation_size "0.875rem" }}nav-size-0-875rem{{/match}}{{#match @custom.navigation_size "1rem"
+  }}nav-size-1rem{{/match}}{{#match @custom.navigation_size "1.25rem" }}nav-size-1-25rem{{/match}}{{#match
+  @custom.navigation_size "1.5rem" }}nav-size-1-5rem{{/match}}{{#match @custom.navigation_size "1.75rem"
+  }}nav-size-1-75rem{{/match}}">
+  <nav>
+    {{navigation}}
+  </nav>
+</div>
+
 {{!-- Component: Site-wide structural header --}}
 <header class="main-header" id="main-header">
-
-  {{!-- Layout: Primary Navigation --}}
-  <div class="top-nav {{#match @custom.navigation_style " Underline"}}nav-style-underline{{/match}}{{#match
-    @custom.navigation_style "Minimal" }}nav-style-minimal{{/match}}{{#match @custom.navigation_style "Pill"
-    }}nav-style-pill{{/match}}{{#match @custom.navigation_style "Brackets" }}nav-style-brackets{{/match}}{{#match
-    @custom.navigation_style "Block" }}nav-style-block{{/match}}{{#match @custom.navigation_style "Cursor"
-    }}nav-style-cursor{{/match}} {{#match @custom.navigation_size "0.75rem" }}nav-size-0-75rem{{/match}}{{#match
-    @custom.navigation_size "0.875rem" }}nav-size-0-875rem{{/match}}{{#match @custom.navigation_size "1rem"
-    }}nav-size-1rem{{/match}}{{#match @custom.navigation_size "1.25rem" }}nav-size-1-25rem{{/match}}{{#match
-    @custom.navigation_size "1.5rem" }}nav-size-1-5rem{{/match}}{{#match @custom.navigation_size "1.75rem"
-    }}nav-size-1-75rem{{/match}}">
-    <nav>
-      {{navigation}}
-    </nav>
-  </div>
-
   <div class="container">
     {{!-- Layout: Branding & Description --}}
     <div class="site-branding">

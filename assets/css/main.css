@@ -596,6 +596,13 @@ iframe[src*="vimeo.com"] {
   font-weight: 500;
 }
 
+.nav-sticky .top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-color);
+}
+
 .top-nav nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -1127,6 +1134,54 @@ body:has(.membership-widget--welcome-mat) {
   --border-color: #44475a;
   --timeline-line-color: #44475a;
   --code-bg: #1e1f29;
+}
+
+.palette-catppuccin {
+  --bg-color: #1e1e2e;
+  --card-bg: #313244;
+  --text-color: #cdd6f4;
+  --text-muted: #6c7086;
+  --accent-color: #cba6f7;
+  --heading-color: #cdd6f4;
+  --border-color: #45475a;
+  --timeline-line-color: #45475a;
+  --code-bg: #181825;
+}
+
+.palette-nordic {
+  --bg-color: #1a2421;
+  --card-bg: #22302b;
+  --text-color: #d4cfc4;
+  --text-muted: #7a8c7e;
+  --accent-color: #8fb573;
+  --heading-color: #e8e2d6;
+  --border-color: #2e3e37;
+  --timeline-line-color: #2e3e37;
+  --code-bg: #141d1a;
+}
+
+.palette-earth {
+  --bg-color: #231c17;
+  --card-bg: #2e2520;
+  --text-color: #d4c8b8;
+  --text-muted: #937e6a;
+  --accent-color: #c67a4a;
+  --heading-color: #e8ddd0;
+  --border-color: #3a302a;
+  --timeline-line-color: #3a302a;
+  --code-bg: #1a1511;
+}
+
+.palette-cyberpunk {
+  --bg-color: #0d0d12;
+  --card-bg: #16161f;
+  --text-color: #d0d0e0;
+  --text-muted: #5a5a7a;
+  --accent-color: #ff2a6d;
+  --heading-color: #e0e0f0;
+  --border-color: #1f1f2e;
+  --timeline-line-color: #1f1f2e;
+  --code-bg: #08080d;
 }
 
 /* SECTION: Mobile Responsiveness */
