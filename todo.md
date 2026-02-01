@@ -56,4 +56,4 @@
 
 - [ ] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
 
-- [ ] **Theme Expansion** — Add color palettes: "Nordic Forest" (deep greens & muted creams), "Warm Earth" (terracotta & sand), "Cyberpunk" (neon accents on dark grey), "Dracula" (classic violet/dark theme). Inspiration from https://coolors.co/palettes/trending
+- [ ] **Theme Expansion** — ~~Dracula~~ done (Default + Dracula shipped). Remaining palettes: "Nordic Forest" (deep greens & muted creams), "Warm Earth" (terracotta & sand), "Cyberpunk" (neon accents on dark grey). Inspiration from https://coolors.co/palettes/trending
