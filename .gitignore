@@ -32,3 +32,5 @@ Thumbs.db
 # Project Specific
 .env
 .DS_Store
+.claude/
+.antigravity/

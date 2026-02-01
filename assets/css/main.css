@@ -163,6 +163,11 @@ h3 {
   font-size: 1.1rem;
 }
 
+.post__image {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
 .post__header,
 .page__header {
   text-align: center;
@@ -190,6 +195,7 @@ img {
 
 figure {
   margin: 2rem 0;
+  margin-inline: 0;
 }
 
 figcaption {
