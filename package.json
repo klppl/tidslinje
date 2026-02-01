@@ -163,5 +163,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/klppl/tidslinje.git"
-  }
+  },
+  "license": "GPL-3.0"
 }

@@ -1,11 +1,9 @@
 {{!-- Pagination: Previous page link display --}}
 {{#if pagination.prev}}
-<br>
-<div class="center-text">
+<div class="center-text pagination-info">
   {{t "Page"}} <strong>{{pagination.page}}</strong> {{t "of"}}
   <strong>{{pagination.pages}}</strong>
 </div>
-<br>
 {{/if}}
 
 {{!-- Loop: Post collection rendering --}}
@@ -60,5 +58,3 @@
 
 {{!-- Pagination: Numeric page links --}}
 <div class="center-text">{{pagination}}</div>
-
-<br>

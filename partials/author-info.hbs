@@ -8,32 +8,28 @@
   {{!-- Render: Optional author profile image --}}
 
   {{#if bio}}
-  <p class="author-info__bio mb0">{{bio}}
-    {{else}}
-  <p>
+  <p class="author-info__bio mb0">{{bio}}</p>
+  {{/if}}
+
+  <p class="author-info__meta">
+    {{#if location}}
+    <span class="author-info__location">
+      {{t "Location"}}:&nbsp;<strong>{{location}}</strong>&ensp;
+    </span>
     {{/if}}
-    <span class="author-info__meta">
-      {{#if location}}
-      <span class="author-info__location ">
-        {{t "Location"}}:&nbsp;<strong>{{location}}</strong>&ensp;
-      </span>
-      {{/if}}
 
-      {{#if website}}
-      <span class="author-info__website">
-        {{t "Website"}}:&nbsp;<a href="{{website}}"><strong>{{website}}</strong></a>&ensp;
-      </span>
-      {{/if}}
+    {{#if website}}
+    <span class="author-info__website">
+      {{t "Website"}}:&nbsp;<a href="{{website}}"><strong>{{website}}</strong></a>&ensp;
+    </span>
+    {{/if}}
 
-      {{#if twitter}}
-      <span class="author-info__twitter">
-        {{t "Twitter/X"}}&nbsp;{{t "handle"}}:&nbsp;<a
-          href="{{social_url type='twitter'}}"><strong>{{twitter}}</strong></a>.
-      </span>
-      {{/if}}
-
+    {{#if twitter}}
+    <span class="author-info__twitter">
+      {{t "Twitter/X"}}&nbsp;{{t "handle"}}:&nbsp;<a
+        href="{{social_url type='twitter'}}"><strong>{{twitter}}</strong></a>.
+    </span>
+    {{/if}}
   </p>
-
-  </span>
 </section>
 {{/primary_author}}

@@ -6,13 +6,13 @@
 --}}
 
 {{#foreach tags visibility="internal" limit="1"}}
-<a href="{{url}}" title="{{name}}" class="timeline-icon-link">
+<a href="{{url}}" title="{{name}}" class="timeline-icon-link" aria-label="{{name}}">
     {{#if description}}
-    {{description}}
+    <span aria-hidden="true">{{description}}</span>
     {{else}}
-    ✍️
+    <span aria-hidden="true">✍️</span>
     {{/if}}
 </a>
 {{else}}
-<span class="timeline-icon-link" title="Default Icon">✍️</span>
+<span class="timeline-icon-link" aria-hidden="true">✍️</span>
 {{/foreach}}

@@ -2,7 +2,7 @@
 {{#if @site.members_enabled}}
 {{#if @member}}
 <section class="email-optin-widget center-text">
-  <small style="color: grey;">
+  <small class="email-optin-widget__thanks">
     {{t "Thanks for being a"}} <em>{{@site.title}}</em> {{t "subscriber"}},
     {{#if @member.name}}
     {{@member.name}}
@@ -12,9 +12,10 @@
     <a href="#!" data-members-signout>[{{t "Sign out"}}]</a>
   </small>
 </section>
+{{else}}
 {{!-- View: Logged-out state / Subscription form --}}
 <section class="email-optin-widget center-text">
-  <div style="margin-bottom: 0.5rem;"><small>{{t "Like what you see? Get new posts by email"}}:</small></div>
+  <div class="email-optin-widget__prompt"><small>{{t "Like what you see? Get new posts by email"}}:</small></div>
 
   {{!-- Input: Data-collection form --}}
   <form data-members-form="subscribe">
@@ -22,8 +23,8 @@
     <button type="submit"><span>{{t "Subscribe"}}</span></button>
   </form>
 
-  <small style="color: grey">
-    <small>{{t "or by"}} <a href="{{@site.url}}/rss">RSS</a>, {{t "if you’re that old-school"}}</small>
+  <small class="email-optin-widget__alt">
+    <small>{{t "or by"}} <a href="{{@site.url}}/rss">RSS</a>, {{t "if you're that old-school"}}</small>
   </small>
 
   {{!-- Feedback: Validation & Success messages --}}

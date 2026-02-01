@@ -7,7 +7,15 @@
     (function () {
         // Configuration
         const API_URL = '{{@site.url}}';
-        const API_KEY = '8106af3afb7842a530c500e633';
+        // Extract Content API key from the ghost_head SDK script
+        const API_KEY = (() => {
+            const scripts = document.querySelectorAll('script');
+            for (const s of scripts) {
+                const match = s.textContent.match(/key:\s*'([0-9a-f]+)'/);
+                if (match) return match[1];
+            }
+            return '';
+        })();
         const HEADING_TEXT = '{{t "Check more related posts"}}';
 
         // Get settings from data attributes

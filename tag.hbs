@@ -6,8 +6,6 @@
     <img class="tag-info__image" src="{{tag.feature_image}}" alt="Image for {{tag.name}} tag" />
     {{/if}}
 
-    <br><br>
-
     <span class="tag-info__intro">{{t "Posts Tagged"}}:</span>
     <h1 class="tag-info__name">{{tag.name}}</h1>
 
@@ -20,9 +18,7 @@
       {{plural pagination.total empty=(t "There are no articles with this tag … how did you find it?!") singular=(t "A
       <strong>% post</strong> collection:") plural=(t "A <strong>% post</strong> collection:")}}
     </span>
-    </span>
 
-    <br><br>
     <hr>
 
   </section>
