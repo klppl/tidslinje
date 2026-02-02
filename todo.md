@@ -54,11 +54,11 @@
 
 - [x] **Icon links point to internal tag pages that 404** — `partials/post-icon.hbs:9`. The `<a>` wrapping each timeline icon links to the internal tag's URL (e.g., `/tag/hash-micro/`). Internal tag pages typically return 404 in Ghost unless custom routes are configured.
 
-- [ ] **Title tag missing space before separator** — `default.hbs:13`. The title outputs `{{meta_title}}{{#is "post, page"}}— {{@site.title}}{{/is}}` which produces `My Post Title— My Site` with no space before the em-dash. Should be ` — ` with spaces on both sides.
+- [x] **Title tag missing space before separator** — `default.hbs:13`. The title outputs `{{meta_title}}{{#is "post, page"}}— {{@site.title}}{{/is}}` which produces `My Post Title— My Site` with no space before the em-dash. Should be ` — ` with spaces on both sides.
 
-- [ ] **Bookmark card layout breaks on mobile** — `main.css`. The `.kg-bookmark-container` is `display: flex` (horizontal) with no responsive media query to stack vertically. On narrow screens the thumbnail and content are squished side by side.
+- [x] **Bookmark card layout breaks on mobile** — `main.css`. The `.kg-bookmark-container` is `display: flex` (horizontal) with no responsive media query to stack vertically. On narrow screens the thumbnail and content are squished side by side.
 
-- [ ] **`post.hbs` passes unused hash params to related-posts** — `post.hbs:61`. The `{{> related-posts reltags=post.tags exclude=post.id}}` partial call passes `reltags` and `exclude` but the partial never reads these — it extracts tags and ID from its own Handlebars context. Dead parameters that are confusing to maintain.
+- [x] **`post.hbs` passes unused hash params to related-posts** — `post.hbs:61`. The `{{> related-posts reltags=post.tags exclude=post.id}}` partial call passes `reltags` and `exclude` but the partial never reads these — it extracts tags and ID from its own Handlebars context. Dead parameters that are confusing to maintain.
 
 ## Nice to Have
 
@@ -104,7 +104,7 @@
 
 - [ ] **Micro posts (status updates) lack visual weight** — Titleless micro posts float visually in the timeline because they have no bold heading to anchor them. Consider bumping `.timeline-content--micro` font size slightly (e.g. `1.2rem`) or giving them a subtle `background` / left-border tint using `var(--card-bg)` to differentiate "thoughts" from "articles."
 
-- [ ] **Make timeline entries fully clickable** — Currently only the "Läs mer" text link is clickable. Per Fitts's Law, the entire `.timeline-right` content block should be a click target for the post. Keep the visible "Read more" text for affordance, but wrap the block in an `<a>` or use a CSS `::after` overlay on the existing link to expand the hit area.
+- [x] **Make timeline entries fully clickable** — Currently only the "Läs mer" text link is clickable. Per Fitts's Law, the entire `.timeline-right` content block should be a click target for the post. Keep the visible "Read more" text for affordance, but wrap the block in an `<a>` or use a CSS `::after` overlay on the existing link to expand the hit area.
 
 - [ ] **Standardize timeline icon style** — The timeline icons are a mix of flat vector icons, gradient-shaded emoji, and simple outlines depending on what the author puts in the internal tag description. This inconsistency clashes with the minimalist aesthetic. Document a recommendation (or enforce via CSS) for a uniform monoline style — e.g. outline-only emoji, or a consistent icon set like Feather/Heroicons rendered in `var(--accent-color)` or `var(--text-muted)`.
 
