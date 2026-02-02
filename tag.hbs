@@ -10,8 +10,7 @@
     <h1 class="tag-info__name">{{tag.name}}</h1>
 
     <p class="tag-info__description">
-      {{tag.description}} {{t "Subscribe to this tag’s"}} <a href="{{@site.url}}/tag/{{tag.slug}}/rss/">{{t "RSS
-        feed"}}</a> {{t "to get new"}} {{tag.name}} {{t "posts as they’re written"}}.
+      {{tag.description}} {{t "Subscribe to the {tagname}" tagname=tag.name}} <a href="{{@site.url}}/tag/{{tag.slug}}/rss/">{{t "RSS feed"}}</a> {{t "to get new {tagname} posts as they're written." tagname=tag.name}}
     </p>
 
     <span class="tag-info__meta">

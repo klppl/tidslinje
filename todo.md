@@ -108,17 +108,17 @@
 
 - [ ] **Human-readable `navigation_size` labels** — `package.json`. The navigation size options display raw CSS values (`"0.75rem"`, `"1.25rem"`, etc.) in Ghost Admin. Non-technical users won't understand these. Replace with labels like "Extra Small", "Small", "Medium", "Large", etc.
 
-- [ ] **Add `"Read more"` key to `en.json`** — `locales/en.json` is missing the `"Read more"` key used in `loop.hbs`. It works by coincidence in English (Ghost falls back to the key itself), but it will break for any locale that does not define its own override.
+- [x] **Add `"Read more"` key to `en.json`** — `locales/en.json` is missing the `"Read more"` key used in `loop.hbs`. It works by coincidence in English (Ghost falls back to the key itself), but it will break for any locale that does not define its own override.
 
-- [ ] **Remove obsolete meta tags** — `default.hbs:8,10`. `<meta name="HandheldFriendly">` (old BlackBerry/Palm) and `<meta http-equiv="X-UA-Compatible">` (IE) are dead weight in modern browsers.
+- [x] **Remove obsolete meta tags** — `default.hbs:8,10`. `<meta name="HandheldFriendly">` (old BlackBerry/Palm) and `<meta http-equiv="X-UA-Compatible">` (IE) are dead weight in modern browsers.
 
-- [ ] **Remove dead `post-teaser.hbs` partial** — `partials/post-teaser.hbs` is never referenced by any template, has no corresponding CSS, and contains broken HTML (unclosed `<span>`). It appears to be leftover from a previous card-based layout.
+- [x] **Remove dead `post-teaser.hbs` partial** — `partials/post-teaser.hbs` is never referenced by any template, has no corresponding CSS, and contains broken HTML (unclosed `<span>`). It appears to be leftover from a previous card-based layout.
 
 - [ ] **Add reading time to posts** — `post.hbs` does not display `{{reading_time}}`. This is a common expectation for blog themes and Ghost provides the helper natively.
 
 - [ ] **Add previous/next post navigation** — `post.hbs` has no prev/next links at the bottom. Ghost provides `{{prev_post}}` and `{{next_post}}` block helpers for this.
 
-- [ ] **Update README** — `README.md` claims "No JavaScript" and "Zero JS by default" but the theme now has `related-posts.js` and an inline IntersectionObserver script. The color palette table only lists 2 palettes but 6 are shipped.
+- [x] **Update README** — `README.md` claims "No JavaScript" and "Zero JS by default" but the theme now has `related-posts.js` and an inline IntersectionObserver script. The color palette table only lists 2 palettes but 6 are shipped.
 
 ## Someday
 
@@ -134,10 +134,10 @@
 
 - [ ] **Search result styling** — The theme relies on Ghost's default `#/search` modal which may not match the dark color scheme. A custom search template or Sodo search color overrides would improve consistency.
 
-- [ ] **Localization improvements** — `tag.hbs:13-14` splits translatable sentences into fragments (`"Subscribe to this tag's"`, `"RSS feed"`), making correct translation into non-English languages impossible. Combine into single `{{t}}` calls with placeholders. Also add missing keys to `sv.json`.
+- [x] **Localization improvements** — `tag.hbs:13-14` splits translatable sentences into fragments (`"Subscribe to this tag's"`, `"RSS feed"`), making correct translation into non-English languages impossible. Combine into single `{{t}}` calls with placeholders. Also add missing keys to `sv.json`.
 
 - [ ] **Print stylesheet** — `main.css` has only a single `text-indent` print rule. A proper `@media print` block should hide nav/footer, use light backgrounds, and ensure readable typography for printed pages.
 
-- [ ] **Loosen `engines.ghost` version** — `package.json` pins to `>=5.104.2`. This specific minor version prevents installation on earlier 5.x releases that are fully compatible. Consider `>=5.0.0` for broader compatibility.
+- [x] **Loosen `engines.ghost` version** — `package.json` pins to `>=5.104.2`. This specific minor version prevents installation on earlier 5.x releases that are fully compatible. Consider `>=5.0.0` for broader compatibility.
 
 - [ ] **Fix `.gitignore` zip conflict** — `.gitignore` has conflicting rules: line 13 `*.zip`, line 14 `!tidslinje.zip`, line 16 `*.zip`. The second `*.zip` overrides the exception. Also, the committed `tidslinje.zip` build artifact should ideally not live in the repo — use GitHub Releases instead.

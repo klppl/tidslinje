@@ -4,7 +4,7 @@
   "demo": "https://github.com/klppl",
   "version": "2.0.2",
   "engines": {
-    "ghost": ">=5.104.2"
+    "ghost": ">=5.0.0"
   },
   "scripts": {
     "zip": "zip -r tidslinje.zip . -x '*.git*' -x 'node_modules/*' -x '.DS_Store' -x '.antigravity/*' -x '*.zip'"

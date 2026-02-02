@@ -3,7 +3,7 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
 [![Vibe Coded](https://img.shields.io/badge/✨-vibe_coded-blueviolet)](https://github.com/klppl/tidslinje)
 
-A dark, minimal Ghost theme built around a timeline layout. No JavaScript, no external dependencies, no tracking.
+A dark, minimal Ghost theme built around a timeline layout. No external dependencies, no tracking.
 
 ![Tidslinje Screenshot](screenshot.png)
 
@@ -14,11 +14,11 @@ A dark, minimal Ghost theme built around a timeline layout. No JavaScript, no ex
 ## Features
 
 - Timeline-based post listing with configurable density and icon positions
-- Color palettes (Default dark, Dracula)
+- Multiple color palettes (Default, Dracula, Catppuccin, Nordic Forest, Warm Earth, Cyberpunk)
 - Six navigation styles (Pill, Underline, Minimal, Brackets, Block, Cursor)
 - Three font families (Serif, Sans-serif, Monospaced) with adjustable size
 - Micro posts for short-form content
-- Zero JS by default, no third-party requests
+- Minimal JS (related posts, scroll animations), no third-party requests
 - Swedish localization
 
 ## Setup
@@ -45,7 +45,7 @@ All of these are in **Ghost Admin > Design**:
 
 | Setting | Options |
 |---|---|
-| Color palette | Default, Dracula |
+| Color palette | Default, Dracula, Catppuccin, Nordic Forest, Warm Earth, Cyberpunk |
 | Font | Serif, Sans-serif, Monospaced |
 | Body font size | Small, Default, Large |
 | Container width | Narrow, Normal, Wide |
