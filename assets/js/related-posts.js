@@ -95,9 +95,9 @@ function renderRelatedPosts(posts, headingText, showExcerpt) {
     const postsHTML = posts.map(post => {
         const safeTitle = escapeHTML(post.title);
         const imageHTML = post.feature_image
-            ? `<a href="${post.url}" class="related-card__image">
+            ? `<div class="related-card__image">
                  <img src="${post.feature_image}" alt="${safeTitle}" loading="lazy" />
-               </a>`
+               </div>`
             : '';
 
         const excerpt = post.excerpt || post.custom_excerpt || '';
@@ -109,16 +109,16 @@ function renderRelatedPosts(posts, headingText, showExcerpt) {
             : '';
 
         return `
-            <article class="related-card">
+            <a class="related-card" href="${post.url}">
                 ${imageHTML}
                 <div class="related-card__content">
-                    <h4 class="related-card__title"><a href="${post.url}">${safeTitle}</a></h4>
-                    ${excerptHTML}
                     <time class="related-card__date" datetime="${post.published_at}">
                         ${new Date(post.published_at).toISOString().split('T')[0]}
                     </time>
+                    <h4 class="related-card__title">${safeTitle}</h4>
+                    ${excerptHTML}
                 </div>
-            </article>
+            </a>
         `;
     }).join('');
 

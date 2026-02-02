@@ -303,7 +303,7 @@ pre {
 }
 
 .timeline-date {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--text-muted);
   position: relative;
@@ -313,7 +313,7 @@ pre {
 
 .timeline-date-mobile {
   display: none;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-bottom: 0.25rem;
@@ -465,7 +465,7 @@ pre {
 }
 
 .timeline-permalink {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-left: 0.5rem;
@@ -1196,12 +1196,12 @@ body:has(.membership-widget--welcome-mat) {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .related-posts__grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
@@ -1209,15 +1209,22 @@ body:has(.membership-widget--welcome-mat) {
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
-  border: 1px solid var(--border-color);
   border-radius: 6px;
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: background-color 0.2s ease, transform 0.2s ease;
   height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .related-card:hover {
-  border-color: var(--accent-color);
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.related-card:hover .related-card__title {
+  color: var(--accent-color);
 }
 
 .related-card__image {
@@ -1236,31 +1243,30 @@ body:has(.membership-widget--welcome-mat) {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: left;
+}
+
+.related-card__date {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
 }
 
 .related-card__title {
   font-size: 1.1rem;
+  font-weight: 600;
   margin: 0 0 0.5rem;
   line-height: 1.3;
-}
-
-.related-card__title a {
   color: var(--heading-color);
-  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .related-card__excerpt {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.related-card__date {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: auto;
+  margin-bottom: 0;
 }
 
 /* SECTION: Color Palettes */
