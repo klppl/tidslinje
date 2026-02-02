@@ -12,6 +12,14 @@
 
 - [x] **Stray `</span>` in `tag.hbs`** — `tag.hbs:23`. An orphan closing `</span>` that doesn't match any opening tag.
 
+- [ ] **Broken closing tag in `tags.hbs`** — `partials/tags.hbs:12`. The closing `</ul>` is written as `<ul>` (opening instead of closing), producing an unclosed list and invalid HTML.
+
+- [ ] **Translation key mismatch from leading spaces** — `partials/welcome-mat.hbs:16` and `partials/subscribe-widget.hbs:22` both use `{{t " Your email address"}}` with a leading space in the key. The locale files define `"Your email address"` (no leading space), so the translation never matches and the raw key (with the space) is shown as placeholder text.
+
+- [ ] **`--tertiary-color` undefined — welcome mat has no background** — `main.css:996`. The `.membership-widget--welcome-mat` background uses `var(--tertiary-color)` which is never defined in `:root` or any palette. The welcome mat renders with a transparent background, making its content unreadable against page content behind it.
+
+- [ ] **Stray space in `navigation.hbs` URL helper** — `partials/navigation.hbs:4`. `{{url absolute=" true"}}` has a space before `true`. Ghost may not parse this correctly, potentially preventing absolute URL generation for navigation links.
+
 ## Bugs
 
 - [x] **Related posts broken** — API key was empty. The JS regex that parsed `script.textContent` for `key: 'abc...'` broke because Cloudflare Rocket Loader rewrites script tags. Fixed by using Ghost's `{{content_api_key}}` Handlebars helper instead. Requires Ghost 5.x+ (which the theme already does).
@@ -31,6 +39,24 @@
 - [x] **`icon-position-right` doesn't adjust timeline line** — `main.css:280-283`. The `icon-position-left` variant repositions the `::before` line to `left: 20px`, but `icon-position-right` leaves the line at the default 140px even though the icon has moved.
 
 - [x] **Typography Audit** — Optimize line-heights and letter-spacing for all font options (serif, sans-serif, monospace) to ensure maximum readability.
+
+- [ ] **Undefined CSS utility classes used across templates** — `.center-text` (used in `tag.hbs`, `author.hbs`, `footer.hbs`, `subscribe-widget.hbs`), `.container` (used in `post.hbs`, `page.hbs`, `error.hbs`, `main-header.hbs`), `.inline-block` (used in `author.hbs`), `.mt0` / `.mb0` (used in `page.hbs`, `author-info.hbs`), and `.btn` / `.btn--cta` (used in `welcome-mat.hbs`) have no CSS definitions. These classes do nothing.
+
+- [ ] **Hardcoded colors ignore palette system** — `main.css`. `.notification-area` uses `#82ea02`, `.message-error` uses `red`, `.message-success` uses `green`. These ignore the CSS variable palette system and clash with most color schemes. Should use variables like `--accent-color` or new semantic color variables.
+
+- [ ] **`content-cta.hbs` inline styles use light colors on dark theme** — `partials/content-cta.hbs:4`. The paid-content upgrade CTA has `background: #eee` inline, which produces a jarring white block against the dark theme. Should use `var(--card-bg)` and `var(--text-color)`.
+
+- [ ] **Locale case mismatch breaks pagination translations** — `locales/en.json` defines `"Older posts"` / `"Newer posts"` (lowercase p) but `partials/pagination.hbs` calls `{{t "Older Posts"}}` / `{{t "Newer Posts"}}` (uppercase P). Ghost's `{{t}}` is case-sensitive, so the translations never match.
+
+- [ ] **`related-posts.js` has no fetch error handling** — `assets/js/related-posts.js`. Neither fetch call checks `response.ok` before calling `.json()`. A 401, 404, or 500 from the Content API will attempt to parse an error page as JSON and throw a confusing error silently.
+
+- [ ] **Icon links point to internal tag pages that 404** — `partials/post-icon.hbs:9`. The `<a>` wrapping each timeline icon links to the internal tag's URL (e.g., `/tag/hash-micro/`). Internal tag pages typically return 404 in Ghost unless custom routes are configured.
+
+- [ ] **Title tag missing space before separator** — `default.hbs:13`. The title outputs `{{meta_title}}{{#is "post, page"}}— {{@site.title}}{{/is}}` which produces `My Post Title— My Site` with no space before the em-dash. Should be ` — ` with spaces on both sides.
+
+- [ ] **Bookmark card layout breaks on mobile** — `main.css`. The `.kg-bookmark-container` is `display: flex` (horizontal) with no responsive media query to stack vertically. On narrow screens the thumbnail and content are squished side by side.
+
+- [ ] **`post.hbs` passes unused hash params to related-posts** — `post.hbs:61`. The `{{> related-posts reltags=post.tags exclude=post.id}}` partial call passes `reltags` and `exclude` but the partial never reads these — it extracts tags and ID from its own Handlebars context. Dead parameters that are confusing to maintain.
 
 ## Nice to Have
 
@@ -54,6 +80,40 @@
 
 - [ ] **Scroll Progress** — Implement a discrete reading progress bar at the top of the page.
 
+- [ ] **Add keyboard focus styles** — No `:focus` or `:focus-visible` rules exist anywhere in `main.css`. Keyboard navigation is completely invisible, which is a WCAG 2.4.7 failure. Add visible focus indicators for links, buttons, and form inputs.
+
+- [ ] **Add skip-to-content link** — `default.hbs` has no skip link. Screen reader and keyboard users must tab through the entire navigation before reaching `<main id="content">`. Add a visually hidden skip link as the first focusable element.
+
+- [ ] **Add `<label>` elements to subscribe forms** — `partials/subscribe-widget.hbs:22` and `partials/welcome-mat.hbs:16`. The email inputs have no `<label>`, only `placeholder` text. Screen readers need a proper `<label>` for WCAG 1.3.1 / 3.3.2 compliance. Use a visually hidden label.
+
+- [ ] **Add `box-sizing: border-box` global reset** — `main.css` has no box-sizing reset. Padding on elements with explicit widths (like `.timeline-left`) computes differently across browsers. Add `*, *::before, *::after { box-sizing: border-box; }`.
+
+- [ ] **Site title heading hierarchy** — `partials/main-header.hbs:13` renders the site title as `<h1>` on every page. On post, page, tag, and author templates, the content title is also an `<h1>`, producing two `<h1>` elements per page. The site title should be `<h1>` only on the home page and `<p>` or `<span>` elsewhere.
+
+- [ ] **Style Ghost content cards for dark theme** — `main.css` has no styles for Ghost's gallery (`.kg-gallery-*`), callout (`.kg-callout-*`), toggle (`.kg-toggle-*`), audio (`.kg-audio-*`), video (`.kg-video-*`), file (`.kg-file-*`), header (`.kg-header-*`), signup (`.kg-signup-*`), or product (`.kg-product-*`) cards. Ghost's default light-mode card CSS will clash with the dark theme.
+
+- [ ] **Tag feature image has no responsive srcset** — `tag.hbs:6`. Uses `{{tag.feature_image}}` directly, delivering the full-size image regardless of viewport. Should use `{{img_url tag.feature_image size="l"}}` with `srcset` for responsive loading.
+
+- [ ] **Featured star needs `aria-hidden`** — `loop.hbs:42`. The `⭐` character in the featured indicator `<span>` has no `aria-hidden="true"`, so screen readers announce the unicode character. Should be marked as decorative.
+
+- [ ] **Generic "Read more" link text** — `loop.hbs:49`. Every timeline entry's read-more link says `{{t "Read more"}}` with no post-specific context. Screen readers hear a list of identical "Read more" links. Add `aria-label="{{t 'Read more'}}: {{title}}"` for context.
+
+- [ ] **Micro posts render untruncated HTML in timeline** — `loop.hbs:34`. Micro posts (`#has tag="#micro"`) render their full `{{{content}}}` inline. If a micro post contains images, embeds, or long text, it breaks the timeline layout. Consider truncating or limiting the rendered output.
+
+- [ ] **Human-readable `navigation_size` labels** — `package.json`. The navigation size options display raw CSS values (`"0.75rem"`, `"1.25rem"`, etc.) in Ghost Admin. Non-technical users won't understand these. Replace with labels like "Extra Small", "Small", "Medium", "Large", etc.
+
+- [ ] **Add `"Read more"` key to `en.json`** — `locales/en.json` is missing the `"Read more"` key used in `loop.hbs`. It works by coincidence in English (Ghost falls back to the key itself), but it will break for any locale that does not define its own override.
+
+- [ ] **Remove obsolete meta tags** — `default.hbs:8,10`. `<meta name="HandheldFriendly">` (old BlackBerry/Palm) and `<meta http-equiv="X-UA-Compatible">` (IE) are dead weight in modern browsers.
+
+- [ ] **Remove dead `post-teaser.hbs` partial** — `partials/post-teaser.hbs` is never referenced by any template, has no corresponding CSS, and contains broken HTML (unclosed `<span>`). It appears to be leftover from a previous card-based layout.
+
+- [ ] **Add reading time to posts** — `post.hbs` does not display `{{reading_time}}`. This is a common expectation for blog themes and Ghost provides the helper natively.
+
+- [ ] **Add previous/next post navigation** — `post.hbs` has no prev/next links at the bottom. Ghost provides `{{prev_post}}` and `{{next_post}}` block helpers for this.
+
+- [ ] **Update README** — `README.md` claims "No JavaScript" and "Zero JS by default" but the theme now has `related-posts.js` and an inline IntersectionObserver script. The color palette table only lists 2 palettes but 6 are shipped.
+
 ## Someday
 
 - [ ] **Tag Icon Filter Bar** — Blocked: Ghost's `{{#get "tags"}}` helper cannot fetch internal tags (visibility filter is ignored). Would need a JavaScript/Content API approach similar to related-posts, or a future Ghost update that supports `visibility:internal` in the get helper.
@@ -61,3 +121,17 @@
 - [x] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
 
 - [x] **Theme Expansion** — Shipped: Default, Dracula, Catppuccin (Mocha), Nordic Forest, Warm Earth, Cyberpunk.
+
+- [ ] **Light mode support** — The theme is dark-only with no `prefers-color-scheme: light` handling. Users who prefer light mode get a dark theme regardless. Consider a light palette or a toggle, or at minimum a single light palette option in Ghost Admin.
+
+- [ ] **Custom page templates** — Ghost supports `custom-*.hbs` templates selectable per-page in the editor (e.g., `custom-full-width.hbs`, `custom-no-header.hbs`). None are provided. Useful for landing pages or pages that need different layouts.
+
+- [ ] **Search result styling** — The theme relies on Ghost's default `#/search` modal which may not match the dark color scheme. A custom search template or Sodo search color overrides would improve consistency.
+
+- [ ] **Localization improvements** — `tag.hbs:13-14` splits translatable sentences into fragments (`"Subscribe to this tag's"`, `"RSS feed"`), making correct translation into non-English languages impossible. Combine into single `{{t}}` calls with placeholders. Also add missing keys to `sv.json`.
+
+- [ ] **Print stylesheet** — `main.css` has only a single `text-indent` print rule. A proper `@media print` block should hide nav/footer, use light backgrounds, and ensure readable typography for printed pages.
+
+- [ ] **Loosen `engines.ghost` version** — `package.json` pins to `>=5.104.2`. This specific minor version prevents installation on earlier 5.x releases that are fully compatible. Consider `>=5.0.0` for broader compatibility.
+
+- [ ] **Fix `.gitignore` zip conflict** — `.gitignore` has conflicting rules: line 13 `*.zip`, line 14 `!tidslinje.zip`, line 16 `*.zip`. The second `*.zip` overrides the exception. Also, the committed `tidslinje.zip` build artifact should ideally not live in the repo — use GitHub Releases instead.
