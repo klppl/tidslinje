@@ -49,7 +49,6 @@ All of these are in **Ghost Admin > Design**:
 | Font | Serif, Sans-serif, Monospaced |
 | Body font size | Small, Default, Large |
 | Container width | Narrow, Normal, Wide |
-| Header alignment | Center, Left |
 | Icon framing | Round, Squircle, Rounded, Sharp |
 | Navigation style | Pill, Underline, Minimal, Brackets, Block, Cursor |
 | Navigation size | 0.75rem – 1.75rem |
@@ -57,6 +56,8 @@ All of these are in **Ghost Admin > Design**:
 | Timeline icon position | Standard, Left, Right, None |
 
 Post display toggles (author, date, tags, related posts, excerpts) and a Welcome Mat opt-in CTA are also available.
+
+For a complete guide to all settings, custom page templates, and features, see **[docs.md](docs.md)**.
 
 ### Timeline Icons
 

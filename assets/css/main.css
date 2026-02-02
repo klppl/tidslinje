@@ -164,14 +164,6 @@ html:has(.font-large) {
   --container-width: 1200px;
 }
 
-.header-left .site-branding,
-.header-left .top-nav,
-.header-left .post__header,
-.header-left .page__header {
-  text-align: left;
-  justify-content: flex-start;
-}
-
 a {
   color: var(--accent-color);
   text-decoration: none;

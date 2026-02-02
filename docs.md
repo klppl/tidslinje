@@ -95,15 +95,6 @@ Controls the maximum width of the site content area.
 
 **Setting**: Design > Container width
 
-### Header Alignment
-
-Controls horizontal alignment of the site title and description.
-
-- **Center** (default) - Title and description centered
-- **Left** - Title and description left-aligned
-
-**Setting**: Design > Header alignment
-
 ### Site Icon Framing
 
 Controls the border radius of the site icon in the header.
