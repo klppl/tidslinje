@@ -281,8 +281,8 @@ pre {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 140px;
-  /* Aligned relative to date width */
+  left: 139px;
+  /* Centered on marker column (date 120px + marker 40px/2 - line 2px/2) */
   width: 2px;
   background: var(--timeline-line-color);
 }
@@ -381,8 +381,8 @@ pre {
      Default left is 140px. 
      If Icon (40px) + Margin (20px) is first.. 
   */
-  left: 20px;
-  /* Center of the icon (40/2) */
+  left: 19px;
+  /* Center of the icon (40/2 - 1px for line width) */
 }
 
 /* MODIFIER: Icon Position - Right */
@@ -396,7 +396,7 @@ pre {
 
 .icon-position-right .timeline-container::before {
   left: auto;
-  right: 20px;
+  right: 19px;
 }
 
 /* MODIFIER: Icon Position - None */
@@ -1683,7 +1683,7 @@ body:has(.membership-widget--welcome-mat) {
 /* SECTION: Mobile Responsiveness */
 @media (max-width: 768px) {
   .timeline-container::before {
-    left: 20px;
+    left: 19px;
   }
 
   .timeline-left {
@@ -1705,12 +1705,15 @@ body:has(.membership-widget--welcome-mat) {
 
   .timeline-marker {
     order: -1;
+    width: 40px;
     margin-right: 1rem;
     margin-left: 0;
+    margin-top: 1.4rem;
+    flex-shrink: 0;
   }
 
   .icon-position-right .timeline-container::before {
-    left: 20px;
+    left: 19px;
     right: auto;
   }
 
