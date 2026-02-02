@@ -1,0 +1,67 @@
+{{!< default}}
+{{!-- Template: Subscribe (Converter)
+     Purpose: Distraction-free newsletter signup landing page.
+     No navigation, no footer clutter — just a headline, pitch,
+     and a single email input focused on conversion. --}}
+
+<main class="subscribe-landing" id="content">
+
+  <article class="subscribe-landing__card">
+
+    {{#post}}
+
+      <header class="subscribe-landing__header">
+        {{#if @site.icon}}
+        <div class="subscribe-landing__icon">
+          <img src="{{@site.icon}}" alt="{{@site.title}}" />
+        </div>
+        {{/if}}
+
+        <h1 class="subscribe-landing__title">{{title}}</h1>
+      </header>
+
+      {{#if custom_excerpt}}
+      <p class="subscribe-landing__pitch">{{custom_excerpt}}</p>
+      {{/if}}
+
+      {{!-- Post body for additional persuasion copy --}}
+      {{#if html}}
+      <section class="subscribe-landing__body">
+        {{content}}
+      </section>
+      {{/if}}
+
+      {{#if @site.members_enabled}}
+        {{#unless @member}}
+        <div class="subscribe-landing__form">
+          <form data-members-form="subscribe">
+            <div class="subscribe-landing__input-group">
+              <label for="subscribe-email" class="sr-only">{{t "Your email address"}}</label>
+              <input id="subscribe-email" data-members-email placeholder="{{t "Your email address"}}" type="email" required="true" />
+              <button class="btn btn--cta" type="submit"><span>{{t "Subscribe"}}</span></button>
+            </div>
+          </form>
+
+          <small class="message-success">
+            {{t "Great! Check your inbox and click the link to confirm your subscription."}}
+          </small>
+          <small class="message-error">
+            {{t "Please enter a valid email address!"}}
+          </small>
+          <small data-members-error></small>
+        </div>
+        {{else}}
+        <div class="subscribe-landing__thanks">
+          <p>{{t "You're already subscribed"}} &mdash; {{t "thanks for being here"}},
+            {{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}!</p>
+        </div>
+        {{/unless}}
+      {{/if}}
+
+      <a class="subscribe-landing__back" href="{{@site.url}}">&larr; {{t "Back to"}} {{@site.title}}</a>
+
+    {{/post}}
+
+  </article>
+
+</main>

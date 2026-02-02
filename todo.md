@@ -132,7 +132,7 @@
 
 - [ ] **Light mode support** — The theme is dark-only with no `prefers-color-scheme: light` handling. Users who prefer light mode get a dark theme regardless. Consider a light palette or a toggle, or at minimum a single light palette option in Ghost Admin.
 
-- [ ] **Custom page templates** — Ghost supports `custom-*.hbs` templates selectable per-page in the editor (e.g., `custom-full-width.hbs`, `custom-no-header.hbs`). None are provided. Useful for landing pages or pages that need different layouts.
+- [x] **Custom page templates** — Implemented 6 custom page templates selectable per-page in the Ghost editor: `custom-full-width.hbs` (immersive reader for visual/code-heavy content), `custom-no-feature-image.hbs` (essayist for pure text), `custom-subscribe.hbs` (distraction-free newsletter signup landing page), `custom-project-case.hbs` (portfolio/case study with structured metadata), `custom-video.hbs` (theater mode with cinema-style video breakout), `custom-curated-list.hbs` (grid layout for bookmark cards and resource lists). All registered in `package.json` and styled in `main.css`.
 
 - [ ] **Search result styling** — The theme relies on Ghost's default `#/search` modal which may not match the dark color scheme. A custom search template or Sodo search color overrides would improve consistency.
 

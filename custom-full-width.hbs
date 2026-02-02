@@ -1,0 +1,39 @@
+{{!< default}}
+{{!-- Template: Full Width (Immersive Reader)
+     Purpose: Visual-heavy posts, photo essays, code-heavy articles.
+     Removes max-width constraints so content can breathe. --}}
+
+{{>content-header}}
+
+<main class="container content" id="content">
+
+  <article class="page page--full-width {{post_class}}">
+
+    {{#post}}
+
+      {{#if @page.show_title_and_feature_image}}
+        <header class="page__header">
+          <h1 class="page__title mt0">{{title}}</h1>
+        </header>
+      {{/if}}
+
+      {{#if feature_image}}
+      <figure class="page--full-width__hero">
+        <img srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url
+          feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 2000w"
+          sizes="100vw" src="{{img_url feature_image size="xl"}}"
+          alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+        {{#if feature_image_caption}}
+        <figcaption>{{feature_image_caption}}</figcaption>
+        {{/if}}
+      </figure>
+      {{/if}}
+
+      <section class="page__content page__content--full-width">
+        {{content}}
+      </section>
+
+    {{/post}}
+  </article>
+
+</main>

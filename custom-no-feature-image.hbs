@@ -1,0 +1,35 @@
+{{!< default}}
+{{!-- Template: No Feature Image (Essayist)
+     Purpose: Pure text posts, announcements, quick thoughts.
+     Skips the feature image entirely, pushing title and text up
+     for immediate reading without visual noise. --}}
+
+{{>content-header}}
+
+<main class="container content" id="content">
+
+  <article class="page page--essayist {{post_class}}">
+
+    {{#post}}
+
+      <header class="page__header">
+        <h1 class="page__title mt0">{{title}}</h1>
+
+        <div class="post__meta">
+          {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}
+          <time class="post__date" datetime="{{date format='YYYY-MM-DD'}}">
+            {{date format="MMMM Do, YYYY"}}
+          </time>
+        </div>
+      </header>
+
+      {{!-- Feature image intentionally omitted --}}
+
+      <section class="page__content">
+        {{content}}
+      </section>
+
+    {{/post}}
+  </article>
+
+</main>

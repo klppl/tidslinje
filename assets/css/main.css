@@ -1269,6 +1269,343 @@ body:has(.membership-widget--welcome-mat) {
   margin-bottom: 0;
 }
 
+/* SECTION: Custom Page Templates */
+/* ================================ */
+
+/* --- Full Width (Immersive Reader) --- */
+.page--full-width .page__header {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page--full-width__hero {
+  margin: 0 -1rem 2rem;
+  max-width: none;
+}
+
+.page--full-width__hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.page__content--full-width {
+  max-width: none;
+}
+
+.page__content--full-width img {
+  max-width: 100%;
+}
+
+.page__content--full-width pre {
+  max-width: 100%;
+}
+
+.page__content--full-width table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* --- No Feature Image (Essayist) --- */
+.page--essayist .page__header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.page--essayist .post__meta {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- Subscribe Landing (Converter) --- */
+.subscribe-landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem 1rem;
+}
+
+.subscribe-landing__card {
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+}
+
+.subscribe-landing__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+}
+
+.subscribe-landing__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.subscribe-landing__title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.subscribe-landing__pitch {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.subscribe-landing__body {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.subscribe-landing__form {
+  margin: 2rem 0;
+}
+
+.subscribe-landing__input-group {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.subscribe-landing__input-group input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+.subscribe-landing__input-group input[type="email"]::placeholder {
+  color: var(--text-muted);
+}
+
+.subscribe-landing__input-group input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.subscribe-landing__thanks {
+  margin: 2rem 0;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.subscribe-landing__back {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.subscribe-landing__back:hover {
+  color: var(--accent-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .subscribe-landing__input-group {
+    flex-direction: column;
+  }
+
+  .subscribe-landing__title {
+    font-size: 2rem;
+  }
+}
+
+/* --- Project Case Study (Portfolio) --- */
+.project__header {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project__title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+.project__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.project__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project__meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.project__meta-value {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.project__hero {
+  margin: 0 0 2rem;
+  max-width: none;
+}
+
+.project__hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.page__content--project {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.page__content--project img {
+  border-radius: 6px;
+}
+
+/* --- Video (Theater) --- */
+.page--video .page__header {
+  margin-bottom: 2rem;
+}
+
+.video__poster {
+  margin: 0 0 2rem;
+  max-width: none;
+}
+
+.video__poster img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.page__content--video {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Cinema mode: video embeds break out of the reading column */
+.page__content--video iframe[src*="youtube.com"],
+.page__content--video iframe[src*="youtube-nocookie.com"],
+.page__content--video iframe[src*="vimeo.com"] {
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  max-width: none;
+  border-radius: 0;
+}
+
+.page__content--video .kg-video-card {
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .page__content--video iframe[src*="youtube.com"],
+  .page__content--video iframe[src*="youtube-nocookie.com"],
+  .page__content--video iframe[src*="vimeo.com"],
+  .page__content--video .kg-video-card {
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+
+/* --- Curated List (Index) --- */
+.curated__subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.page__content--curated {
+  max-width: none;
+}
+
+/* Bookmark cards display as a responsive grid */
+.page__content--curated .kg-bookmark-card {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - 1rem);
+  margin: 0.5rem;
+}
+
+.page__content--curated .kg-bookmark-container {
+  flex-direction: column;
+  height: 100%;
+}
+
+.page__content--curated .kg-bookmark-thumbnail {
+  min-width: 100%;
+  max-height: 160px;
+}
+
+.page__content--curated .kg-bookmark-thumbnail img {
+  position: relative;
+}
+
+/* Section headings act as grid dividers */
+.page__content--curated h2,
+.page__content--curated h3 {
+  width: 100%;
+  display: block;
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page__content--curated h2:first-child,
+.page__content--curated h3:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .page__content--curated .kg-bookmark-card {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
 /* SECTION: Color Palettes */
 .palette-dracula {
   --bg-color: #282a36;

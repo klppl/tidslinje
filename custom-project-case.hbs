@@ -1,0 +1,61 @@
+{{!< default}}
+{{!-- Template: Project Case Study (Portfolio)
+     Purpose: Timeless project showcases, case studies, portfolio pieces.
+     Features a structured metadata header (tags as "role/client" context)
+     and wide content area for screenshots and before/after visuals. --}}
+
+{{>content-header}}
+
+<main class="container content" id="content">
+
+  <article class="page page--project {{post_class}}">
+
+    {{#post}}
+
+      <header class="project__header">
+        <h1 class="project__title">{{title}}</h1>
+
+        <div class="project__meta">
+          {{#if tags}}
+          <div class="project__meta-item">
+            <span class="project__meta-label">{{t "Filed under"}}</span>
+            <span class="project__meta-value">{{tags separator=", " autolink="false"}}</span>
+          </div>
+          {{/if}}
+
+          <div class="project__meta-item">
+            <span class="project__meta-label">{{t "Published"}}</span>
+            <span class="project__meta-value">
+              <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM YYYY"}}</time>
+            </span>
+          </div>
+
+          {{#primary_author}}
+          <div class="project__meta-item">
+            <span class="project__meta-label">{{t "Author"}}</span>
+            <span class="project__meta-value"><a href="{{url}}">{{name}}</a></span>
+          </div>
+          {{/primary_author}}
+        </div>
+      </header>
+
+      {{#if feature_image}}
+      <figure class="project__hero">
+        <img srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url
+          feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 2000w"
+          sizes="(min-width: 1400px) 1400px, 92vw" src="{{img_url feature_image size="xl"}}"
+          alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+        {{#if feature_image_caption}}
+        <figcaption>{{feature_image_caption}}</figcaption>
+        {{/if}}
+      </figure>
+      {{/if}}
+
+      <section class="page__content page__content--project">
+        {{content}}
+      </section>
+
+    {{/post}}
+  </article>
+
+</main>
