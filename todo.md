@@ -134,7 +134,7 @@
 
 - [x] **Custom page templates** — Implemented 6 custom page templates selectable per-page in the Ghost editor: `custom-full-width.hbs` (immersive reader for visual/code-heavy content), `custom-no-feature-image.hbs` (essayist for pure text), `custom-subscribe.hbs` (distraction-free newsletter signup landing page), `custom-project-case.hbs` (portfolio/case study with structured metadata), `custom-video.hbs` (theater mode with cinema-style video breakout), `custom-curated-list.hbs` (grid layout for bookmark cards and resource lists). All registered in `package.json` and styled in `main.css`.
 
-- [ ] **Search result styling** — The theme relies on Ghost's default `#/search` modal which may not match the dark color scheme. A custom search template or Sodo search color overrides would improve consistency.
+- [x] **Search result styling** — Ghost's Sodo search renders in an isolated iframe with hardcoded light styles. Added a MutationObserver script in `default.hbs` that detects the search iframe, reads the active palette CSS variables (`--bg-color`, `--card-bg`, `--text-color`, etc.), and injects a dark-themed stylesheet into the iframe. Overrides backgrounds, text colors, input fields, highlights, scrollbars, and hover states to match whichever color palette is active. CSS variables also stored on `#sodo-search-root` in `main.css` for reference.
 
 - [x] **Localization improvements** — `tag.hbs:13-14` splits translatable sentences into fragments (`"Subscribe to this tag's"`, `"RSS feed"`), making correct translation into non-English languages impossible. Combine into single `{{t}}` calls with placeholders. Also add missing keys to `sv.json`.
 

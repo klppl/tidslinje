@@ -1606,6 +1606,20 @@ body:has(.membership-widget--welcome-mat) {
   }
 }
 
+/* SECTION: Sodo Search Dark Mode Overrides */
+/* Ghost's native search (Sodo) renders inside an iframe/shadow root
+   with hardcoded light styles. We style the outer container here and
+   inject dark overrides into the iframe via JavaScript in default.hbs. */
+
+#sodo-search-root {
+  --sodo-search-bg: var(--bg-color);
+  --sodo-search-card-bg: var(--card-bg);
+  --sodo-search-text: var(--text-color);
+  --sodo-search-text-muted: var(--text-muted);
+  --sodo-search-border: var(--border-color);
+  --sodo-search-accent: var(--accent-color);
+}
+
 /* SECTION: Color Palettes */
 .palette-dracula {
   --bg-color: #282a36;

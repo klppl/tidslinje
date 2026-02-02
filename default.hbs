@@ -34,6 +34,120 @@
   {{!-- Hook: System foot assets --}}
   {{ghost_foot}}
 
+  {{!-- Sodo Search: Dark mode style injection
+       Ghost's native search modal renders in an isolated iframe with
+       hardcoded light styles. This observer waits for the iframe to
+       appear, then injects a dark-themed stylesheet that matches the
+       active palette. --}}
+  <script>
+    (function () {
+      var root = document.getElementById('sodo-search-root');
+      if (!root) {
+        // Sodo search not loaded yet — watch for it
+        var bodyObserver = new MutationObserver(function (mutations) {
+          root = document.getElementById('sodo-search-root');
+          if (root) {
+            bodyObserver.disconnect();
+            observeSearchRoot(root);
+          }
+        });
+        bodyObserver.observe(document.body, { childList: true });
+      } else {
+        observeSearchRoot(root);
+      }
+
+      function observeSearchRoot(searchRoot) {
+        var styled = false;
+        var observer = new MutationObserver(function () {
+          if (styled) return;
+          var iframe = searchRoot.querySelector('iframe');
+          if (!iframe) return;
+          iframe.addEventListener('load', function () {
+            injectStyles(iframe);
+          });
+          // Also try immediately in case already loaded
+          try { injectStyles(iframe); } catch (e) { /* cross-origin, wait for load */ }
+        });
+        observer.observe(searchRoot, { childList: true, subtree: true });
+
+        // Also handle shadow DOM if present
+        if (searchRoot.shadowRoot) {
+          var shadowIframe = searchRoot.shadowRoot.querySelector('iframe');
+          if (shadowIframe) {
+            shadowIframe.addEventListener('load', function () { injectStyles(shadowIframe); });
+          }
+        }
+      }
+
+      function injectStyles(iframe) {
+        try {
+          var doc = iframe.contentDocument || iframe.contentWindow.document;
+          if (!doc || doc.getElementById('tidslinje-search-dark')) return;
+
+          var cs = getComputedStyle(document.documentElement);
+          var bg = cs.getPropertyValue('--bg-color').trim() || '#1e1e1e';
+          var cardBg = cs.getPropertyValue('--card-bg').trim() || '#252525';
+          var text = cs.getPropertyValue('--text-color').trim() || '#e0e0e0';
+          var muted = cs.getPropertyValue('--text-muted').trim() || '#a0a0a0';
+          var border = cs.getPropertyValue('--border-color').trim() || '#333';
+          var accent = cs.getPropertyValue('--accent-color').trim() || '#6cb6ff';
+          var heading = cs.getPropertyValue('--heading-color').trim() || '#fff';
+
+          var style = doc.createElement('style');
+          style.id = 'tidslinje-search-dark';
+          style.textContent = [
+            '/* Tidslinje dark theme overrides */',
+            '.bg-white, [class*="bg-white"] { background-color: ' + bg + ' !important; }',
+            '.bg-neutral-100, [class*="bg-neutral-100"] { background-color: ' + cardBg + ' !important; }',
+            '.text-neutral-900, [class*="text-neutral-900"] { color: ' + text + ' !important; }',
+            '.text-neutral-500, [class*="text-neutral-500"], .text-neutral-400 { color: ' + muted + ' !important; }',
+            '.text-neutral-800, [class*="text-neutral-800"] { color: ' + heading + ' !important; }',
+            '.border-neutral-200, [class*="border-neutral-200"] { border-color: ' + border + ' !important; }',
+            '.border-neutral-100 { border-color: ' + border + ' !important; }',
+            'input, [type="search"], [type="text"] { background-color: ' + cardBg + ' !important; color: ' + text + ' !important; border-color: ' + border + ' !important; }',
+            'input::placeholder { color: ' + muted + ' !important; }',
+            'mark, [class*="highlight"] { background-color: ' + accent + '33 !important; color: ' + heading + ' !important; }',
+            '.hover\\:bg-neutral-100:hover { background-color: ' + border + ' !important; }',
+            'a { color: ' + accent + ' !important; }',
+            'svg { color: ' + muted + ' !important; }',
+            '::-webkit-scrollbar { width: 6px; }',
+            '::-webkit-scrollbar-track { background: ' + bg + '; }',
+            '::-webkit-scrollbar-thumb { background: ' + border + '; border-radius: 3px; }'
+          ].join('\n');
+          doc.head.appendChild(style);
+        } catch (e) {
+          // Cross-origin iframe — cannot inject styles
+        }
+      }
+    })();
+  </script>
+
+  {{!-- Fix: Ghost's link_class helper marks hash-based URLs (e.g. #/search)
+       as nav-current on the index page because it ignores the fragment.
+       Also catches data-ghost-search links that point to site root. --}}
+  <script>
+    (function () {
+      document.querySelectorAll('.top-nav .nav-current a').forEach(function (a) {
+        var href = a.getAttribute('href') || '';
+        // Parse the href to separate path from hash
+        var link = document.createElement('a');
+        link.href = href;
+        var hasHash = link.hash && link.hash.length > 1;
+        var pathOnly = link.pathname.replace(/\/$/, '') || '/';
+        var currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+        // Remove nav-current if: link has a hash fragment and the path portion
+        // matches current page (meaning the highlight came from path match only)
+        if (hasHash && pathOnly === currentPath) {
+          a.parentElement.classList.remove('nav-current');
+        }
+        // Also remove nav-current from data-ghost-search triggers
+        if (a.hasAttribute('data-ghost-search')) {
+          a.parentElement.classList.remove('nav-current');
+        }
+      });
+    })();
+  </script>
+
   {{!-- Timeline entry scroll animations --}}
   <script>
     (function () {
