@@ -127,6 +127,15 @@
         ],
         "default": "Standard"
       },
+      "timeline_icon_style": {
+        "type": "select",
+        "options": [
+          "Default",
+          "Monochrome",
+          "Contrast"
+        ],
+        "default": "Default"
+      },
       "post_header_show_author": {
         "type": "boolean",
         "default": true

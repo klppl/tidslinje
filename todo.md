@@ -106,7 +106,7 @@
 
 - [x] **Make timeline entries fully clickable** — Currently only the "Läs mer" text link is clickable. Per Fitts's Law, the entire `.timeline-right` content block should be a click target for the post. Keep the visible "Read more" text for affordance, but wrap the block in an `<a>` or use a CSS `::after` overlay on the existing link to expand the hit area.
 
-- [ ] **Standardize timeline icon style** — The timeline icons are a mix of flat vector icons, gradient-shaded emoji, and simple outlines depending on what the author puts in the internal tag description. This inconsistency clashes with the minimalist aesthetic. Document a recommendation (or enforce via CSS) for a uniform monoline style — e.g. outline-only emoji, or a consistent icon set like Feather/Heroicons rendered in `var(--accent-color)` or `var(--text-muted)`.
+- [x] **Standardize timeline icon style** — The timeline icons are a mix of flat vector icons, gradient-shaded emoji, and simple outlines depending on what the author puts in the internal tag description. This inconsistency clashes with the minimalist aesthetic. Document a recommendation (or enforce via CSS) for a uniform monoline style — e.g. outline-only emoji, or a consistent icon set like Feather/Heroicons rendered in `var(--accent-color)` or `var(--text-muted)`.
 
 - [ ] **Human-readable `navigation_size` labels** — `package.json`. The navigation size options display raw CSS values (`"0.75rem"`, `"1.25rem"`, etc.) in Ghost Admin. Non-technical users won't understand these. Replace with labels like "Extra Small", "Small", "Medium", "Large", etc.
 

@@ -23,7 +23,7 @@
   @custom.container_width "Narrow" }}width-narrow{{else match @custom.container_width "Wide" }}width-wide{{/match}}
   {{#match @custom.header_alignment "Left" }}header-left{{/match}} {{#match @custom.timeline_icon_position "Left"
   }}icon-position-left{{else match @custom.timeline_icon_position "Right" }}icon-position-right{{else match
-  @custom.timeline_icon_position "None" }}icon-position-none{{/match}} {{#match @custom.color_palette "Dracula"}}palette-dracula{{else match @custom.color_palette "Catppuccin"}}palette-catppuccin{{else match @custom.color_palette "Nordic Forest"}}palette-nordic{{else match @custom.color_palette "Warm Earth"}}palette-earth{{else match @custom.color_palette "Cyberpunk"}}palette-cyberpunk{{/match}} {{#match @custom.sticky_navigation}}nav-sticky{{/match}}" id="body">
+  @custom.timeline_icon_position "None" }}icon-position-none{{/match}} {{#match @custom.color_palette "Dracula"}}palette-dracula{{else match @custom.color_palette "Catppuccin"}}palette-catppuccin{{else match @custom.color_palette "Nordic Forest"}}palette-nordic{{else match @custom.color_palette "Warm Earth"}}palette-earth{{else match @custom.color_palette "Cyberpunk"}}palette-cyberpunk{{/match}} {{#match @custom.sticky_navigation}}nav-sticky{{/match}} {{#match @custom.timeline_icon_style "Monochrome"}}icon-style-mono{{else match @custom.timeline_icon_style "Contrast"}}icon-style-contrast{{/match}}" id="body">
 
   {{!-- View: Template body injection --}}
   {{{body}}}
