@@ -40,17 +40,17 @@
 
 - [x] **Typography Audit** — Optimize line-heights and letter-spacing for all font options (serif, sans-serif, monospace) to ensure maximum readability.
 
-- [ ] **Undefined CSS utility classes used across templates** — `.center-text` (used in `tag.hbs`, `author.hbs`, `footer.hbs`, `subscribe-widget.hbs`), `.container` (used in `post.hbs`, `page.hbs`, `error.hbs`, `main-header.hbs`), `.inline-block` (used in `author.hbs`), `.mt0` / `.mb0` (used in `page.hbs`, `author-info.hbs`), and `.btn` / `.btn--cta` (used in `welcome-mat.hbs`) have no CSS definitions. These classes do nothing.
+- [x] **Undefined CSS utility classes used across templates** — `.center-text` (used in `tag.hbs`, `author.hbs`, `footer.hbs`, `subscribe-widget.hbs`), `.container` (used in `post.hbs`, `page.hbs`, `error.hbs`, `main-header.hbs`), `.inline-block` (used in `author.hbs`), `.mt0` / `.mb0` (used in `page.hbs`, `author-info.hbs`), and `.btn` / `.btn--cta` (used in `welcome-mat.hbs`) have no CSS definitions. These classes do nothing.
 
 - [x] **Hardcoded colors ignore palette system**
 
 - [x] **File card (attachment) ignores dark theme** — Ghost's default `.kg-file-card` styles use light colors that clash with the dark theme. Excluded Ghost's default file card CSS via `package.json` and added full custom layout and color styles using the palette system (`--card-bg`, `--border-color`, `--heading-color`, `--text-muted`, `--accent-color`). — `main.css`. `.notification-area` uses `#82ea02`, `.message-error` uses `red`, `.message-success` uses `green`. These ignore the CSS variable palette system and clash with most color schemes. Should use variables like `--accent-color` or new semantic color variables.
 
-- [ ] **`content-cta.hbs` inline styles use light colors on dark theme** — `partials/content-cta.hbs:4`. The paid-content upgrade CTA has `background: #eee` inline, which produces a jarring white block against the dark theme. Should use `var(--card-bg)` and `var(--text-color)`.
+- [x] **`content-cta.hbs` inline styles use light colors on dark theme** — `partials/content-cta.hbs:4`. The paid-content upgrade CTA has `background: #eee` inline, which produces a jarring white block against the dark theme. Should use `var(--card-bg)` and `var(--text-color)`.
 
-- [ ] **Locale case mismatch breaks pagination translations** — `locales/en.json` defines `"Older posts"` / `"Newer posts"` (lowercase p) but `partials/pagination.hbs` calls `{{t "Older Posts"}}` / `{{t "Newer Posts"}}` (uppercase P). Ghost's `{{t}}` is case-sensitive, so the translations never match.
+- [x] **Locale case mismatch breaks pagination translations** — `locales/en.json` defines `"Older posts"` / `"Newer posts"` (lowercase p) but `partials/pagination.hbs` calls `{{t "Older Posts"}}` / `{{t "Newer Posts"}}` (uppercase P). Ghost's `{{t}}` is case-sensitive, so the translations never match.
 
-- [ ] **`related-posts.js` has no fetch error handling** — `assets/js/related-posts.js`. Neither fetch call checks `response.ok` before calling `.json()`. A 401, 404, or 500 from the Content API will attempt to parse an error page as JSON and throw a confusing error silently.
+- [x] **`related-posts.js` has no fetch error handling** — `assets/js/related-posts.js`. Neither fetch call checks `response.ok` before calling `.json()`. A 401, 404, or 500 from the Content API will attempt to parse an error page as JSON and throw a confusing error silently.
 
 - [ ] **Icon links point to internal tag pages that 404** — `partials/post-icon.hbs:9`. The `<a>` wrapping each timeline icon links to the internal tag's URL (e.g., `/tag/hash-micro/`). Internal tag pages typically return 404 in Ghost unless custom routes are configured.
 

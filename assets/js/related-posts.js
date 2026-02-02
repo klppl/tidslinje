@@ -18,6 +18,7 @@ async function loadRelatedPosts(postId, tags, apiUrl, apiKey, headingText, showE
         const tagsResponse = await fetch(
             `${apiUrl}/ghost/api/content/tags/?key=${apiKey}&filter=slug:[${taglist.join(',')}]&include=count.posts&order=count.posts%20ASC`
         );
+        if (!tagsResponse.ok) return;
         const tagsData = await tagsResponse.json();
 
         if (!tagsData.tags || tagsData.tags.length === 0) {
@@ -31,6 +32,7 @@ async function loadRelatedPosts(postId, tags, apiUrl, apiKey, headingText, showE
         const postsResponse = await fetch(
             `${apiUrl}/ghost/api/content/posts/?key=${apiKey}&filter=id:-[${postId}]%2Btags:[${tagSlugs.join(',')}]&limit=3&include=tags,authors`
         );
+        if (!postsResponse.ok) return;
         const postsData = await postsResponse.json();
 
         // Deduplicate and sort by tag rarity (posts matching rarer tags first)
@@ -69,6 +71,7 @@ async function getRecentPosts(postId, apiUrl, apiKey, headingText, showExcerpt) 
         const response = await fetch(
             `${apiUrl}/ghost/api/content/posts/?key=${apiKey}&filter=id:-[${postId}]&limit=3&include=tags,authors`
         );
+        if (!response.ok) return;
         const data = await response.json();
 
         if (data.posts && data.posts.length > 0) {
