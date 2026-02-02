@@ -993,7 +993,7 @@ iframe[src*="vimeo.com"] {
   max-width: 100vw;
   position: absolute;
   left: 0;
-  background-color: var(--tertiary-color);
+  background-color: var(--bg-color);
 }
 
 .membership-widget--welcome-mat h4 {

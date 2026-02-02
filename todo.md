@@ -14,11 +14,11 @@
 
 - [x] **Broken closing tag in `tags.hbs`** — `partials/tags.hbs:12`. The closing `</ul>` is written as `<ul>` (opening instead of closing), producing an unclosed list and invalid HTML.
 
-- [ ] **Translation key mismatch from leading spaces** — `partials/welcome-mat.hbs:16` and `partials/subscribe-widget.hbs:22` both use `{{t " Your email address"}}` with a leading space in the key. The locale files define `"Your email address"` (no leading space), so the translation never matches and the raw key (with the space) is shown as placeholder text.
+- [x] **Translation key mismatch from leading spaces** — `partials/welcome-mat.hbs:16` and `partials/subscribe-widget.hbs:22` both use `{{t " Your email address"}}` with a leading space in the key. The locale files define `"Your email address"` (no leading space), so the translation never matches and the raw key (with the space) is shown as placeholder text.
 
-- [ ] **`--tertiary-color` undefined — welcome mat has no background** — `main.css:996`. The `.membership-widget--welcome-mat` background uses `var(--tertiary-color)` which is never defined in `:root` or any palette. The welcome mat renders with a transparent background, making its content unreadable against page content behind it.
+- [x] **`--tertiary-color` undefined — welcome mat has no background** — `main.css:996`. The `.membership-widget--welcome-mat` background uses `var(--tertiary-color)` which is never defined in `:root` or any palette. The welcome mat renders with a transparent background, making its content unreadable against page content behind it.
 
-- [ ] **Stray space in `navigation.hbs` URL helper** — `partials/navigation.hbs:4`. `{{url absolute=" true"}}` has a space before `true`. Ghost may not parse this correctly, potentially preventing absolute URL generation for navigation links.
+- [x] **Stray space in `navigation.hbs` URL helper** — `partials/navigation.hbs:4`. `{{url absolute=" true"}}` has a space before `true`. Ghost may not parse this correctly, potentially preventing absolute URL generation for navigation links.
 
 ## Bugs
 
