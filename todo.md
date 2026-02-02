@@ -42,7 +42,9 @@
 
 - [ ] **Undefined CSS utility classes used across templates** — `.center-text` (used in `tag.hbs`, `author.hbs`, `footer.hbs`, `subscribe-widget.hbs`), `.container` (used in `post.hbs`, `page.hbs`, `error.hbs`, `main-header.hbs`), `.inline-block` (used in `author.hbs`), `.mt0` / `.mb0` (used in `page.hbs`, `author-info.hbs`), and `.btn` / `.btn--cta` (used in `welcome-mat.hbs`) have no CSS definitions. These classes do nothing.
 
-- [ ] **Hardcoded colors ignore palette system** — `main.css`. `.notification-area` uses `#82ea02`, `.message-error` uses `red`, `.message-success` uses `green`. These ignore the CSS variable palette system and clash with most color schemes. Should use variables like `--accent-color` or new semantic color variables.
+- [x] **Hardcoded colors ignore palette system**
+
+- [x] **File card (attachment) ignores dark theme** — Ghost's default `.kg-file-card` styles use light colors that clash with the dark theme. Excluded Ghost's default file card CSS via `package.json` and added full custom layout and color styles using the palette system (`--card-bg`, `--border-color`, `--heading-color`, `--text-muted`, `--accent-color`). — `main.css`. `.notification-area` uses `#82ea02`, `.message-error` uses `red`, `.message-success` uses `green`. These ignore the CSS variable palette system and clash with most color schemes. Should use variables like `--accent-color` or new semantic color variables.
 
 - [ ] **`content-cta.hbs` inline styles use light colors on dark theme** — `partials/content-cta.hbs:4`. The paid-content upgrade CTA has `background: #eee` inline, which produces a jarring white block against the dark theme. Should use `var(--card-bg)` and `var(--text-color)`.
 

@@ -569,6 +569,72 @@ hr {
 
 /* END BOOKMARK CARD STYLES */
 
+/* SECTION: File Card Styles */
+/* NOTE: Ghost's default file card CSS is excluded via package.json card_assets.exclude.
+   These styles provide both layout and dark-theme colors for .kg-file-card. */
+
+.kg-file-card {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.kg-file-card-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.kg-file-card-container:hover {
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+.kg-file-card-contents {
+  flex: 1;
+  min-width: 0;
+}
+
+.kg-file-card-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--heading-color);
+}
+
+.kg-file-card-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.kg-file-card-metadata {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.kg-file-card-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  color: var(--accent-color);
+}
+
+.kg-file-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* END FILE CARD STYLES */
+
 /* RESPONSIVE VIDEO EMBED STYLES */
 /* ============================= */
 
@@ -927,7 +993,7 @@ iframe[src*="vimeo.com"] {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background-color: #82ea02;
+  background-color: var(--accent-color);
   padding: 1rem;
   margin-top: 2rem;
   box-sizing: border-box;
@@ -941,11 +1007,11 @@ iframe[src*="vimeo.com"] {
 
 .message-error,
 [data-members-error] {
-  color: red;
+  color: #f87171;
 }
 
 .message-success {
-  color: green;
+  color: #4ade80;
 }
 
 .loading button span,
