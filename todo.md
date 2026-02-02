@@ -52,7 +52,7 @@
 
 - [x] **`related-posts.js` has no fetch error handling** — `assets/js/related-posts.js`. Neither fetch call checks `response.ok` before calling `.json()`. A 401, 404, or 500 from the Content API will attempt to parse an error page as JSON and throw a confusing error silently.
 
-- [ ] **Icon links point to internal tag pages that 404** — `partials/post-icon.hbs:9`. The `<a>` wrapping each timeline icon links to the internal tag's URL (e.g., `/tag/hash-micro/`). Internal tag pages typically return 404 in Ghost unless custom routes are configured.
+- [x] **Icon links point to internal tag pages that 404** — `partials/post-icon.hbs:9`. The `<a>` wrapping each timeline icon links to the internal tag's URL (e.g., `/tag/hash-micro/`). Internal tag pages typically return 404 in Ghost unless custom routes are configured.
 
 - [ ] **Title tag missing space before separator** — `default.hbs:13`. The title outputs `{{meta_title}}{{#is "post, page"}}— {{@site.title}}{{/is}}` which produces `My Post Title— My Site` with no space before the em-dash. Should be ` — ` with spaces on both sides.
 

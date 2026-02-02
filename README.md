@@ -5,7 +5,7 @@
 
 A dark, minimal Ghost theme built around a timeline layout. No external dependencies, no tracking.
 
-![Tidslinje Screenshot](screenshot.png)
+### [**Live Demo → klippel.se**](https://klippel.se)
 
 > [!CAUTION]
 > **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI.
