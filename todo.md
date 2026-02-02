@@ -12,7 +12,7 @@
 
 - [x] **Stray `</span>` in `tag.hbs`** — `tag.hbs:23`. An orphan closing `</span>` that doesn't match any opening tag.
 
-- [ ] **Broken closing tag in `tags.hbs`** — `partials/tags.hbs:12`. The closing `</ul>` is written as `<ul>` (opening instead of closing), producing an unclosed list and invalid HTML.
+- [x] **Broken closing tag in `tags.hbs`** — `partials/tags.hbs:12`. The closing `</ul>` is written as `<ul>` (opening instead of closing), producing an unclosed list and invalid HTML.
 
 - [ ] **Translation key mismatch from leading spaces** — `partials/welcome-mat.hbs:16` and `partials/subscribe-widget.hbs:22` both use `{{t " Your email address"}}` with a leading space in the key. The locale files define `"Your email address"` (no leading space), so the translation never matches and the raw key (with the space) is shown as placeholder text.
 
