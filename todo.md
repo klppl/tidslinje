@@ -100,6 +100,12 @@
 
 - [ ] **Micro posts render untruncated HTML in timeline** — `loop.hbs:34`. Micro posts (`#has tag="#micro"`) render their full `{{{content}}}` inline. If a micro post contains images, embeds, or long text, it breaks the timeline layout. Consider truncating or limiting the rendered output.
 
+- [ ] **Micro posts (status updates) lack visual weight** — Titleless micro posts float visually in the timeline because they have no bold heading to anchor them. Consider bumping `.timeline-content--micro` font size slightly (e.g. `1.2rem`) or giving them a subtle `background` / left-border tint using `var(--card-bg)` to differentiate "thoughts" from "articles."
+
+- [ ] **Make timeline entries fully clickable** — Currently only the "Läs mer" text link is clickable. Per Fitts's Law, the entire `.timeline-right` content block should be a click target for the post. Keep the visible "Read more" text for affordance, but wrap the block in an `<a>` or use a CSS `::after` overlay on the existing link to expand the hit area.
+
+- [ ] **Standardize timeline icon style** — The timeline icons are a mix of flat vector icons, gradient-shaded emoji, and simple outlines depending on what the author puts in the internal tag description. This inconsistency clashes with the minimalist aesthetic. Document a recommendation (or enforce via CSS) for a uniform monoline style — e.g. outline-only emoji, or a consistent icon set like Feather/Heroicons rendered in `var(--accent-color)` or `var(--text-muted)`.
+
 - [ ] **Human-readable `navigation_size` labels** — `package.json`. The navigation size options display raw CSS values (`"0.75rem"`, `"1.25rem"`, etc.) in Ghost Admin. Non-technical users won't understand these. Replace with labels like "Extra Small", "Small", "Medium", "Large", etc.
 
 - [ ] **Add `"Read more"` key to `en.json`** — `locales/en.json` is missing the `"Read more"` key used in `loop.hbs`. It works by coincidence in English (Ghost falls back to the key itself), but it will break for any locale that does not define its own override.
