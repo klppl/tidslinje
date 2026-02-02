@@ -58,6 +58,6 @@
 
 - [ ] **Tag Icon Filter Bar** — Blocked: Ghost's `{{#get "tags"}}` helper cannot fetch internal tags (visibility filter is ignored). Would need a JavaScript/Content API approach similar to related-posts, or a future Ghost update that supports `visibility:internal` in the get helper.
 
-- [ ] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
+- [x] **Timeline Entry Animations** — Add subtle fade-in effects for timeline items as they enter the viewport.
 
 - [x] **Theme Expansion** — Shipped: Default, Dracula, Catppuccin (Mocha), Nordic Forest, Warm Earth, Cyberpunk.

@@ -1225,3 +1225,23 @@ body:has(.membership-widget--welcome-mat) {
     right: auto;
   }
 }
+
+/* SECTION: Timeline Entry Animations */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
