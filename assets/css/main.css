@@ -28,7 +28,7 @@
   --accent-color: #6cb6ff;
   /* Theme accent color */
   --border-color: #333;
-  --timeline-line-color: #444;
+  --timeline-line-color: color-mix(in srgb, var(--accent-color) 25%, transparent);
   --heading-color: #fff;
   --code-bg: #111;
 }
@@ -283,7 +283,7 @@ pre {
   bottom: 0;
   left: 140px;
   /* Aligned relative to date width */
-  width: 1px;
+  width: 2px;
   background: var(--timeline-line-color);
 }
 
@@ -430,37 +430,32 @@ pre {
 .timeline-title {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--heading-color);
 }
 
 .timeline-title a {
   color: inherit;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .timeline-title a:hover {
   color: var(--accent-color);
 }
 
-.timeline-excerpt {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-read-more {
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.timeline-read-more::after {
+.timeline-title a::after {
   content: '';
   position: absolute;
   inset: 0;
 }
+
+.timeline-excerpt {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
 
 /* SECTION: Micro Post Styling */
 .timeline-content--micro {
@@ -1638,7 +1633,6 @@ body:has(.membership-widget--welcome-mat) {
   --accent-color: #bd93f9;
   --heading-color: #f8f8f2;
   --border-color: #44475a;
-  --timeline-line-color: #44475a;
   --code-bg: #1e1f29;
 }
 
@@ -1650,7 +1644,6 @@ body:has(.membership-widget--welcome-mat) {
   --accent-color: #cba6f7;
   --heading-color: #cdd6f4;
   --border-color: #45475a;
-  --timeline-line-color: #45475a;
   --code-bg: #181825;
 }
 
@@ -1662,7 +1655,6 @@ body:has(.membership-widget--welcome-mat) {
   --accent-color: #8fb573;
   --heading-color: #e8e2d6;
   --border-color: #2e3e37;
-  --timeline-line-color: #2e3e37;
   --code-bg: #141d1a;
 }
 
@@ -1674,7 +1666,6 @@ body:has(.membership-widget--welcome-mat) {
   --accent-color: #c67a4a;
   --heading-color: #e8ddd0;
   --border-color: #3a302a;
-  --timeline-line-color: #3a302a;
   --code-bg: #1a1511;
 }
 
@@ -1686,7 +1677,6 @@ body:has(.membership-widget--welcome-mat) {
   --accent-color: #ff2a6d;
   --heading-color: #e0e0f0;
   --border-color: #1f1f2e;
-  --timeline-line-color: #1f1f2e;
   --code-bg: #08080d;
 }
 
@@ -1709,7 +1699,7 @@ body:has(.membership-widget--welcome-mat) {
   }
 
   .timeline-title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 0.25rem;
   }
 

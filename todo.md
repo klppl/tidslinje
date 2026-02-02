@@ -100,6 +100,12 @@
 
 - [x] **Generic "Read more" link text** — `loop.hbs:49`. Every timeline entry's read-more link says `{{t "Read more"}}` with no post-specific context. Screen readers hear a list of identical "Read more" links. Add `aria-label="{{t 'Read more'}}: {{title}}"` for context.
 
+- [x] **Remove redundant "Läs Mer" (Read More) links** — The repeated `LÄS MER →` on every timeline entry creates visual noise and breaks the minimalist aesthetic. Removed the visible read-more link, moved the full-card click overlay (`::after`) to the title link, and kept the title hover color change as the interactivity hint.
+
+- [x] **Improve typography and visual hierarchy** — Text weight too uniform across timeline entries. Titles, excerpts, and dates lack clear differentiation. Bumped title from `1.25rem`/`600` to `1.5rem`/`700`, reduced excerpt from `0.95rem` to `0.9rem` with `font-weight: 300` to create a clearer headline-to-summary distinction.
+
+- [x] **Make timeline line more prominent** — The vertical timeline spine was too thin (`1px`) and used flat grey (`#444`) that paled against the dark background. Widened to `2px` and changed color to `color-mix(in srgb, var(--accent-color) 25%, transparent)` so it picks up a subtle tint from each palette's accent color automatically. Removed redundant per-palette `--timeline-line-color` overrides.
+
 - [x] **Micro posts render untruncated HTML in timeline** — `loop.hbs:34`. Micro posts (`#has tag="#micro"`) render their full `{{{content}}}` inline. If a micro post contains images, embeds, or long text, it breaks the timeline layout. Consider truncating or limiting the rendered output.
 
 - [x] **Micro posts (status updates) lack visual weight** — Titleless micro posts float visually in the timeline because they have no bold heading to anchor them. Consider bumping `.timeline-content--micro` font size slightly (e.g. `1.2rem`) or giving them a subtle `background` / left-border tint using `var(--card-bg)` to differentiate "thoughts" from "articles."
