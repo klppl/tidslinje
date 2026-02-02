@@ -413,7 +413,7 @@ pre {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--text-muted);
   margin: 2rem 0;
