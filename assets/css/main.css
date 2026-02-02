@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* SECTION: Global Design Variables */
   --container-width: 960px;
@@ -307,8 +313,7 @@ pre {
   font-size: 0.85rem;
   color: var(--text-muted);
   position: relative;
-  top: 4px;
-  /* Aligned with typography baseline */
+  top: 0.2em;
 }
 
 .timeline-date-mobile {
@@ -399,6 +404,10 @@ pre {
   display: none;
 }
 
+.icon-position-none .timeline-container::before {
+  display: none;
+}
+
 /* MODIFIER: Icon Style - Monochrome */
 .icon-style-mono .timeline-icon {
   filter: grayscale(1);
@@ -455,7 +464,7 @@ pre {
 
 /* SECTION: Micro Post Styling */
 .timeline-content--micro {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 

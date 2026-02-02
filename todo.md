@@ -88,9 +88,9 @@
 
 - [ ] **Add `<label>` elements to subscribe forms** — `partials/subscribe-widget.hbs:22` and `partials/welcome-mat.hbs:16`. The email inputs have no `<label>`, only `placeholder` text. Screen readers need a proper `<label>` for WCAG 1.3.1 / 3.3.2 compliance. Use a visually hidden label.
 
-- [ ] **Add `box-sizing: border-box` global reset** — `main.css` has no box-sizing reset. Padding on elements with explicit widths (like `.timeline-left`) computes differently across browsers. Add `*, *::before, *::after { box-sizing: border-box; }`.
+- [x] **Add `box-sizing: border-box` global reset** — `main.css` has no box-sizing reset. Padding on elements with explicit widths (like `.timeline-left`) computes differently across browsers. Add `*, *::before, *::after { box-sizing: border-box; }`.
 
-- [ ] **Site title heading hierarchy** — `partials/main-header.hbs:13` renders the site title as `<h1>` on every page. On post, page, tag, and author templates, the content title is also an `<h1>`, producing two `<h1>` elements per page. The site title should be `<h1>` only on the home page and `<p>` or `<span>` elsewhere.
+- [x] **Site title heading hierarchy** — `partials/main-header.hbs:13` renders the site title as `<h1>` on every page. On post, page, tag, and author templates, the content title is also an `<h1>`, producing two `<h1>` elements per page. The site title should be `<h1>` only on the home page and `<p>` or `<span>` elsewhere.
 
 - [ ] **Style Ghost content cards for dark theme** — `main.css` has no styles for Ghost's gallery (`.kg-gallery-*`), callout (`.kg-callout-*`), toggle (`.kg-toggle-*`), audio (`.kg-audio-*`), video (`.kg-video-*`), file (`.kg-file-*`), header (`.kg-header-*`), signup (`.kg-signup-*`), or product (`.kg-product-*`) cards. Ghost's default light-mode card CSS will clash with the dark theme.
 
@@ -98,11 +98,11 @@
 
 - [ ] **Featured star needs `aria-hidden`** — `loop.hbs:42`. The `⭐` character in the featured indicator `<span>` has no `aria-hidden="true"`, so screen readers announce the unicode character. Should be marked as decorative.
 
-- [ ] **Generic "Read more" link text** — `loop.hbs:49`. Every timeline entry's read-more link says `{{t "Read more"}}` with no post-specific context. Screen readers hear a list of identical "Read more" links. Add `aria-label="{{t 'Read more'}}: {{title}}"` for context.
+- [x] **Generic "Read more" link text** — `loop.hbs:49`. Every timeline entry's read-more link says `{{t "Read more"}}` with no post-specific context. Screen readers hear a list of identical "Read more" links. Add `aria-label="{{t 'Read more'}}: {{title}}"` for context.
 
-- [ ] **Micro posts render untruncated HTML in timeline** — `loop.hbs:34`. Micro posts (`#has tag="#micro"`) render their full `{{{content}}}` inline. If a micro post contains images, embeds, or long text, it breaks the timeline layout. Consider truncating or limiting the rendered output.
+- [x] **Micro posts render untruncated HTML in timeline** — `loop.hbs:34`. Micro posts (`#has tag="#micro"`) render their full `{{{content}}}` inline. If a micro post contains images, embeds, or long text, it breaks the timeline layout. Consider truncating or limiting the rendered output.
 
-- [ ] **Micro posts (status updates) lack visual weight** — Titleless micro posts float visually in the timeline because they have no bold heading to anchor them. Consider bumping `.timeline-content--micro` font size slightly (e.g. `1.2rem`) or giving them a subtle `background` / left-border tint using `var(--card-bg)` to differentiate "thoughts" from "articles."
+- [x] **Micro posts (status updates) lack visual weight** — Titleless micro posts float visually in the timeline because they have no bold heading to anchor them. Consider bumping `.timeline-content--micro` font size slightly (e.g. `1.2rem`) or giving them a subtle `background` / left-border tint using `var(--card-bg)` to differentiate "thoughts" from "articles."
 
 - [x] **Make timeline entries fully clickable** — Currently only the "Läs mer" text link is clickable. Per Fitts's Law, the entire `.timeline-right` content block should be a click target for the post. Keep the visible "Read more" text for affordance, but wrap the block in an `<a>` or use a CSS `::after` overlay on the existing link to expand the hit area.
 

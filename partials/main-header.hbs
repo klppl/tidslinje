@@ -10,7 +10,11 @@
         <a href="{{@site.url}}"><img src="{{@site.icon}}" alt="{{@site.title}} icon" /></a>
       </div>
       {{/if}}
+      {{#is "home"}}
       <h1 class="site-title">{{@site.title}}</h1>
+      {{else}}
+      <p class="site-title">{{@site.title}}</p>
+      {{/is}}
       <p class="site-description">{{@site.description}}</p>
     </div>
   </div>

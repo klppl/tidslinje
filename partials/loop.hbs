@@ -33,7 +33,7 @@
       </time>
       {{#has tag="#micro"}}
       <div class="timeline-content timeline-content--micro">
-        {{{content}}}
+        {{excerpt words="50"}}
         <a href="{{url}}" class="timeline-permalink" aria-label="Permalink">#</a>
       </div>
       {{else}}
@@ -46,7 +46,7 @@
         {{excerpt words="30"}}...
       </div>
 
-      <a class="timeline-read-more" href="{{url}}">{{t "Read more"}} &rarr;</a>
+      <a class="timeline-read-more" href="{{url}}" aria-label="{{t "Read more"}}: {{title}}">{{t "Read more"}} &rarr;</a>
       {{/has}}
     </div>
 
