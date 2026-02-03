@@ -1,0 +1,36 @@
+name: Deploy Theme
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    # 1. Grant permission to write changes back to the repository
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v3
+
+      # 2. Add this step to bump version and push back to GitHub
+      - name: Bump version and push
+        run: |
+          # Configure git so it can commit the change
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Increment the patch version (e.g., 1.0.0 -> 1.0.1)
+          # The -m flag creates a commit message. "[skip ci]" prevents an infinite loop.
+          npm version patch -m "Bump version to %s [skip ci]"
+          
+          # Push the new commit and tag back to the repository
+          git push --follow-tags
+
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
