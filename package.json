@@ -2,7 +2,7 @@
   "name": "tidslinje",
   "description": "Tidslinje: A minimalist, timeline-focused Ghost theme for chronicling your existence before the inevitable heat death of the universe.",
   "demo": "https://github.com/klppl",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "engines": {
     "ghost": ">=5.0.0"
   },
@@ -31,7 +31,11 @@
           "Catppuccin",
           "Nordic Forest",
           "Warm Earth",
-          "Cyberpunk"
+          "Cyberpunk",
+          "Night Owl",
+          "Nord",
+          "Solarized",
+          "Gruvbox"
         ],
         "default": "Default"
       },

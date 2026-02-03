@@ -1672,6 +1672,50 @@ body:has(.membership-widget--welcome-mat) {
   --code-bg: #08080d;
 }
 
+.palette-nightowl {
+  --bg-color: #011627;
+  --card-bg: #0b2942;
+  --text-color: #d6deeb;
+  --text-muted: #637777;
+  --accent-color: #7fdbca;
+  --heading-color: #d6deeb;
+  --border-color: #1d3b53;
+  --code-bg: #001122;
+}
+
+.palette-nord {
+  --bg-color: #2e3440;
+  --card-bg: #3b4252;
+  --text-color: #d8dee9;
+  --text-muted: #7b88a1;
+  --accent-color: #88c0d0;
+  --heading-color: #eceff4;
+  --border-color: #434c5e;
+  --code-bg: #242933;
+}
+
+.palette-solarized {
+  --bg-color: #002b36;
+  --card-bg: #073642;
+  --text-color: #839496;
+  --text-muted: #7c9198;
+  --accent-color: #268bd2;
+  --heading-color: #93a1a1;
+  --border-color: #094959;
+  --code-bg: #00212b;
+}
+
+.palette-gruvbox {
+  --bg-color: #282828;
+  --card-bg: #3c3836;
+  --text-color: #ebdbb2;
+  --text-muted: #928374;
+  --accent-color: #fabd2f;
+  --heading-color: #fbf1c7;
+  --border-color: #504945;
+  --code-bg: #1d2021;
+}
+
 /* SECTION: Mobile Responsiveness */
 @media (max-width: 768px) {
   .timeline-container::before {
