@@ -683,6 +683,25 @@ hr {
   margin-top: 0.25rem;
 }
 
+.kg-file-card-filename {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--heading-color);
+}
+
+.kg-file-card-filesize {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.kg-file-card-medium {
+  padding: 0.75rem;
+}
+
+.kg-file-card-small {
+  padding: 0.5rem;
+}
+
 .kg-file-card-icon {
   flex-shrink: 0;
   width: 40px;
