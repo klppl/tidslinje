@@ -10,7 +10,7 @@
 <div class="timeline-container">
   {{#foreach posts visibility="all"}}
 
-  <div class="timeline-item">
+  <div class="timeline-item {{#if featured}}timeline-item--featured{{/if}}">
 
     {{!-- LEFT: Date --}}
     <div class="timeline-left">

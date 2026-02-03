@@ -1,0 +1,47 @@
+name: Release Theme
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (e.g. v1.0.0). Leave empty to use package.json version.'
+        required: false
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version from package.json
+        id: package_version
+        run: |
+          VERSION=$(jq -r .version package.json)
+          echo "version=v$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Determine Tag
+        id: tag
+        run: |
+          if [ -z "${{ inputs.tag_name }}" ]; then
+            echo "name=${{ steps.package_version.outputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "name=${{ inputs.tag_name }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install zip
+        run: sudo apt-get install -y zip
+
+      - name: Create Zip Package
+        run: npm run zip
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: Release ${{ steps.tag.outputs.name }}
+          files: tidslinje.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: true
