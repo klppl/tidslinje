@@ -12,13 +12,22 @@
     <div class="site-footer__attribution--copyright">
       <small>
         &copy; {{date format="YYYY"}}
-        <a href="{{@site.url}}/">{{@site.title}}</a>
+        <span class="h-card">
+          <a href="{{@site.url}}" class="u-url u-uid p-name" rel="me">
+            {{@site.title}}
+          </a>
+          {{#if @site.icon}}
+          <img class="u-photo" src="{{@site.icon}}" alt="{{@site.title}} icon" style="display: none;" />
+          {{/if}}
+          <span class="p-note" style="display: none;">{{@site.description}}</span>
+        </span>
       </small>
     </div>
 
     <div class="site-footer__attribution--colophon">
       <small>
-        {{t "published with"}} <a href="https://ghost.org">ghost</a> + <a href="https://github.com/klppl">❤️</a>
+        {{t "published with"}} <a href="https://ghost.org">ghost</a> + <a href="https://github.com/klppl"
+          rel="me">❤️</a>
       </small>
     </div>
 

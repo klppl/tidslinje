@@ -1,14 +1,14 @@
 {{#primary_author}}
-<section class="author-info">
+<section class="author-info p-author h-card">
 
   <h4 class="author-info__name">
-    {{t "Written by"}} <a href="{{url}}">{{name}}</a>
+    {{t "Written by"}} <a href="{{url}}" class="p-name u-url">{{name}}</a>
   </h4>
 
   {{!-- Render: Optional author profile image --}}
 
   {{#if bio}}
-  <p class="author-info__bio mb0">{{bio}}</p>
+  <p class="author-info__bio mb0 p-note">{{bio}}</p>
   {{/if}}
 
   <p class="author-info__meta">
@@ -20,14 +20,14 @@
 
     {{#if website}}
     <span class="author-info__website">
-      {{t "Website"}}:&nbsp;<a href="{{website}}"><strong>{{website}}</strong></a>&ensp;
+      {{t "Website"}}:&nbsp;<a href="{{website}}" class="u-url"><strong>{{website}}</strong></a>&ensp;
     </span>
     {{/if}}
 
     {{#if twitter}}
     <span class="author-info__twitter">
-      {{t "Twitter/X"}}&nbsp;{{t "handle"}}:&nbsp;<a
-        href="{{social_url type='twitter'}}"><strong>{{twitter}}</strong></a>.
+      {{t "Twitter/X"}}&nbsp;{{t "handle"}}:&nbsp;<a href="{{social_url type='twitter'}}"
+        class="u-url"><strong>{{twitter}}</strong></a>.
     </span>
     {{/if}}
   </p>

@@ -10,11 +10,11 @@
 <div class="timeline-container">
   {{#foreach posts visibility="all"}}
 
-  <div class="timeline-item {{#if featured}}timeline-item--featured{{/if}}">
+  <div class="timeline-item h-entry {{#if featured}}timeline-item--featured{{/if}}">
 
     {{!-- LEFT: Date --}}
     <div class="timeline-left">
-      <time class="timeline-date" datetime="{{date format='YYYY-MM-DD'}}">
+      <time class="timeline-date dt-published" datetime="{{date format='YYYY-MM-DD'}}">
         {{date format="YYYY-MM-DD"}}
       </time>
     </div>
@@ -32,17 +32,17 @@
         {{date format="YYYY-MM-DD"}}
       </time>
       {{#has tag="#micro"}}
-      <div class="timeline-content timeline-content--micro">
+      <div class="timeline-content timeline-content--micro e-content">
         {{excerpt words="50"}}
-        <a href="{{url}}" class="timeline-permalink" aria-label="Permalink">#</a>
+        <a href="{{url}}" class="timeline-permalink u-url" aria-label="Permalink">#</a>
       </div>
       {{else}}
-      <h2 class="timeline-title">
-        <a href="{{url}}">{{title}}</a>
+      <h2 class="timeline-title p-name">
+        <a href="{{url}}" class="u-url">{{title}}</a>
         {{#if featured}}<span>★</span>{{/if}}
       </h2>
 
-      <div class="timeline-excerpt">
+      <div class="timeline-excerpt p-summary">
         {{excerpt words="30"}}...
       </div>
       {{/has}}

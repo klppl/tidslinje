@@ -60,6 +60,8 @@
 
 - [x] **`post.hbs` passes unused hash params to related-posts** — `post.hbs:61`. The `{{> related-posts reltags=post.tags exclude=post.id}}` partial call passes `reltags` and `exclude` but the partial never reads these — it extracts tags and ID from its own Handlebars context. Dead parameters that are confusing to maintain.
 
+- [ ] **Microposts missing functional URL links** — `loop.hbs`. Micro posts (`#has tag="#micro"`) have issues with URL links that need to be fixed to correctly support microformats requirements.
+
 ## Nice to Have
 
 - [x] **Add `error.hbs` / `404.hbs` templates** — Without these, Ghost falls back to a plain default error page that doesn't match the theme.

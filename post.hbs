@@ -2,21 +2,23 @@
 
   <main class="container content" id="content">
 
-    <article class="post {{post_class}}">
+    <article class="post {{post_class}} h-entry">
 
       {{#post}}
 
       <header class="post__header">
-        <h1 class="post__title">{{title}}</h1>
+        <h1 class="post__title p-name">{{title}}</h1>
 
         <div class="post__meta">
           {{#match @custom.post_header_show_author}}
-          {{t "Posted by"}} {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}
+          {{t "Posted by"}} {{#primary_author}}<a href="{{url}}" class="p-author h-card"
+            rel="author">{{name}}</a>{{/primary_author}}
           {{/match}}
+          <a href="{{url}}" class="u-url" style="display: none;">Permalink</a>
 
           {{#match @custom.post_header_show_date}}
           {{#match @custom.post_header_show_author}} {{t "on"}} {{/match}}
-          <time class="post__date" datetime="{{date format='YYYY-MM-DD'}}">
+          <time class="post__date dt-published" datetime="{{date format='YYYY-MM-DD'}}">
             {{date format="MMMM Do, YYYY"}}.
           </time>
           {{/match}}
@@ -24,7 +26,10 @@
           {{#match @custom.post_header_show_tags}}
           {{#if tags}}
           <span class="post__tags">
-            {{tags prefix=(t "Tagged ")}}
+            {{t "Tagged"}}
+            {{#foreach tags}}
+            <a href="{{url}}" class="p-category">{{name}}</a>
+            {{/foreach}}
           </span>
           {{/if}}
           {{/match}}
@@ -33,9 +38,9 @@
 
       {{#if feature_image}}
       <figure class="post__image">
-        <img srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url
-          feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 2000w"
-          sizes="(min-width: 1400px) 1400px, 92vw" src="{{img_url feature_image size="xl"}}"
+        <img srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image size="m" }} 600w, {{img_url
+          feature_image size="l" }} 1000w, {{img_url feature_image size="xl" }} 2000w"
+          sizes="(min-width: 1400px) 1400px, 92vw" src="{{img_url feature_image size=" xl"}}"
           alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
         {{#if feature_image_caption}}
         <figcaption>{{feature_image_caption}}</figcaption>
@@ -43,7 +48,7 @@
       </figure>
       {{/if}}
 
-      <section class="post__content">
+      <section class="post__content e-content">
         {{content}}
       </section>
 
