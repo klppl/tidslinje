@@ -7,8 +7,6 @@ A dark, minimal Ghost theme built around a timeline layout. No external dependen
 
 <img src="screenshot.png" width="500">
 
-### [**Live Demo → klippel.se**](https://klippel.se)
-
 > [!CAUTION]
 > **Vibe Disclaimer**: This theme was 100% vibe-coded in collaboration between a human architect and an agentic AI.
 > Expect high-entropy logic, aesthetic-first architecture, and code that technically shouldn't work as well as it does. By using this, you accept that reality is subjective and that "it works on my machine" is a valid deployment strategy.
