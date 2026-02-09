@@ -5,6 +5,8 @@
 
 A dark, minimal Ghost theme built around a timeline layout. No external dependencies, no tracking.
 
+<img src="screenshot.png" width="500">
+
 ### [**Live Demo → klippel.se**](https://klippel.se)
 
 > [!CAUTION]
