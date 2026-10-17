@@ -1,5 +1,6 @@
 # Tidslinje
 
+[![License: Lagom](https://img.shields.io/badge/license-lagom-9E2B25)](https://klppl.github.io/lagom-license/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
 [![Vibe Coded](https://img.shields.io/badge/✨-vibe_coded-blueviolet)](https://github.com/klppl/tidslinje)
 
